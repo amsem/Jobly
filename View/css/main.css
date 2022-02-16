@@ -7,17 +7,6 @@ html{
 	font-family: 'Alegreya','Heebo','Muli','Poppins', serif;
 }
 
-.container2{
-	padding-left: 10vw;
-	padding-top: 50px;
-	overflow: hidden;
-
-}
-
-.title{
-	text-align: center;	
-}
-
 .parentbtn{
 	text-align: center;
 }
@@ -42,34 +31,6 @@ html{
 .contact{
 	background:white;
 	border-radius: 10px;
-
-}
-.social-icons{
-	display: flex;
-	flex-direction: row;
-	justify-content:center;
-	align-items:center;
-	padding-top: 7%;
-}
-.social{
-	width: 30px;
-	color: #3A3B59;
-}
-.social:hover{
-	animation: spin .5s ease ;
-	}
-@keyframes spin{
-	from{ transform: rotate(0deg); }
-	to{transform: rotate(360deg);}
-	}
-.des{
-	font: Muli;
-	padding-top:20vh;
-	background-image: url('images/Component3.png');
-	background-size: 75vw 400px ;
-	background-repeat: no-repeat;
-	background-position-x: left;
-	background-position-y:-10px;
 
 }
 .box{

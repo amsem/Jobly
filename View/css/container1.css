@@ -1,6 +1,9 @@
 .container1{
 	overflow: hidden;
 }
+.title{
+	text-align: center;	
+}
 .main-image{
 	size: 70vw auto;
 	padding-top: 20vh;
