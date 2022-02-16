@@ -1,0 +1,74 @@
+.container1{
+	overflow: hidden;
+}
+.main-image{
+	size: 70vw auto;
+	padding-top: 20vh;
+	padding-right: 10vw;
+	max-width: 120%;
+
+}
+.main{
+	padding: 1em;
+	margin-top: 11rem;
+	padding-left: 10vw;
+}
+.container1 .title{
+	padding: 1em;
+}
+.container1 p{
+	padding: 0 80px;
+}
+.container1 .parentbtn{
+	padding-top: 2em;
+
+}
+#buy{
+		background-color: #00F1F1;
+}
+@media only screen and (max-width: 1100px){
+	.main-image{
+		padding-left: 0;
+	}
+
+}
+@media only screen and (max-width: 767px){
+	.main-image{
+		display: none;
+	}
+	.main{
+		background:linear-gradient(rgba(0,0,0,0.6),rgba(0, 0, 0, 0.35)),url('images/Group42.png');
+		background-size: cover;
+		margin-top: 0;
+		padding: 3rem;
+	}
+	.container1 .title, .container1 p{
+		color: white;
+	}
+	.container2{
+		padding-left: 0;
+	}
+	.container1 svg{
+		color: white;
+	}
+}
+
+.navbar-item{
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 25px;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	background-size: 0% 2px !important;
+	background:linear-gradient(90deg,#14f7cc,#ff00d7);
+	background-position: left bottom 13px;
+	text-decoration: none;
+	background-repeat: no-repeat!important;
+	transition: background-size 800ms ease;
+}
+.navbar-item:hover{
+	background-size: 100% 2px!important;
+	color: black!important;
+}
