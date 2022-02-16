@@ -37,7 +37,7 @@
 		display: none;
 	}
 	.main{
-		background:linear-gradient(rgba(0,0,0,0.6),rgba(0, 0, 0, 0.35)),url('images/Group42.png');
+		background:linear-gradient(rgba(0,0,0,0.6),rgba(0, 0, 0, 0.35)),url('../images/Group42.png');
 		background-size: cover;
 		margin-top: 0;
 		padding: 3rem;
