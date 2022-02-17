@@ -1,7 +1,19 @@
 
 .container2{
-	padding-left: 10vw;
+	padding-left: 5vw;
 	padding-top: 200px;
 	overflow: hidden;
 
+}
+.container2 .content{
+	padding-top: 100px;
+}
+.table{
+	margin-left: 120px!important;
+	overflow: hidden;
+}
+@media only screen and (max-width: 767px){
+	.container2{
+		padding-top: 100px;
+	}
 }
