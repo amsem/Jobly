@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/bouncer.css">
 	<link rel="stylesheet" type="text/css" href="css/container4.css">
@@ -23,7 +22,7 @@
 		<div></div>
 		<div></div>
 	</div>
-	<nav class="navbar content is-medium mb-0 p-0 pl-4" role="navigation" aria-label="main navigation">
+	<nav class="navbar content is-medium mb-0 p-0" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
 			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
 			    <span aria-hidden="true"></span>
@@ -33,23 +32,24 @@
 		</div>
 		<div class="navbar-menu" id="navbarBasicExample">
 			<div class="navbar-start">
-				<a href="#"><h2 class="navbar-brand pt-5 mt-1 mr-2 is-italic has-color-black">Welcome!</h2></a>
-				<a class="navbar-item " href="#Faqs">register</a>
-				<a class="navbar-item js-modal-trigger" data-target="modal-js-example2">login</a>
+				<a class="navbar-brand"><img class="logo mr-5 mt-5 ml-3" src="images/Group46.png"></a>
+				<div class="srch mt-5 ">
+					<input class="searchbar" type="search" placeholder="Search here for offers" aria-label="Search">
+					<button class="btn2 pt-3" type="submit">Search</button>					
+				</div>
 			</div>
 			<div class="navbar-end ">
+				<a class="navbar-item js-modal-trigger" data-target="modal-js-example">register</a>
+				<a class="navbar-item js-modal-trigger" data-target="modal-js-example2">login</a>
 				<a class="navbar-item ">offers</a>
-				<a class="navbar-item " >Faqs</a>
 				<a class="navbar-item ">contact us</a>
-				<a class="navbar-item pr-4 "><img class="social" src="images/adjust-solid.svg"></a>
-
 			</div>
 		</div>
 	</nav>
 	<div class="container1">
 		<div class="columns  ">
 
-			<div class="column is-6-widescreen is-full-mobile main-content ">
+			<div class="column is-6-widescreen  main-content ">
 				<div class="content main">
 					<h2 class="title ">Let's get the Job done!</h2>	
 					<p>find the perfect candidate for your
@@ -62,7 +62,7 @@
 				</div>				
 
 			</div>
-			<div class="column is-5 image-principale">
+			<div class="column is-5-widescreen image-principale">
 				<img class="main-image" src="images/Group42.png">	
 			</div>
 
@@ -242,27 +242,20 @@
 				  </div>
 				  <label class="label2">entrez votre message et on va vous repondre le plus vite possible</label>
 				</div>
-				<button class="modal-close is-large" aria-label="close"></button>
 				<div class="field is-grouped">
-			  <div class="control">
-			    <button class="button is-link has-background-black">Submit</button>
-			  </div>
-			  <div class="control">
-			    <button class="button is-link is-light">Cancel</button>
-			  </div>
+					<div class="control">
+						<button class="button is-link has-background-black">Submit</button>
+					</div>
 				</div>
 		</div>
 	</div>
 </body>	
 <footer class="footer ourfooter">
-  <div class="content has-text-centered">
-    <p>
-      BULMA By Hello World!
-    </p>
-  </div>
-
-	<script  src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js">
-	</script>
+	<div class="content has-text-centered">
+	<p>
+	  BULMA By Hello World!
+	</p>
+	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js" integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js" integrity="sha512-pvDW4tehKKsohH97164HwKwRGFpzayEFWTVbk8HuUoLIQ7Jp+WLN5XYokVuoCj2aT6dy8ihbW8SRTG1k0W4mSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
