@@ -32,9 +32,6 @@ html{
 	border-radius: 5px;
 
 }
-.control: hover{
-	transform: scale(1.5);
-}
 .box .button + .box .button{
 	margin-left: 80px;
 }
@@ -59,14 +56,7 @@ html{
 	margin-bottom: 10px;
 	font-size: 1.5rem;
 }
-.field+.field{
-	margin-top: 10px;
-}
-.textarea{
-		background: rgba(255,255,255,0.1);
-		border: none;
-		border-top: 1px solid whitesmoke;
-}
+
 		/* bouncing balls*/
 
 .title{
@@ -77,12 +67,4 @@ html{
 	font: Poppins;
 	font-weight:bold;
 	font-size:1.25rem;
-}
-.columns{
-	padding: 0;
-	margin: 0;
-}
-.column{
-	padding-right: 0;
-	padding-left: 0;
 }
