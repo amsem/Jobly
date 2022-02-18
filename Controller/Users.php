@@ -15,15 +15,15 @@
                 'password' => trim($_POST['password'])
             ];
 
-            if($this->userModel->findUserByUsername($data['user'])){
-                echo "<script>alert('username already taken');</script>";
-                header("Location: ../test");
+            if($this->userModel->checkIfUserExists($data['user'],$data['email'])){
+                header("Location: ../view/index.php");
+                die();
             }
 
             $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
 
             if($this->userModel->register($data)){
-                echo 'registred sucessfully';
+                header("Location: ../view/index.php");
             }else{
                 die("Something went wrong");
             }

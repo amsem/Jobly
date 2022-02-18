@@ -7,13 +7,13 @@
             $this->db = new Database;
         }
 
-        public function findUserByUsername($username){
-            $this->db->query('SELECT * FROM users WHERE user = :username');
+        public function checkIfUserExists($username,$email){
+            $this->db->query('SELECT * FROM users WHERE user = :username OR email = :email');
             $this->db->bind(':username',$username);
+            $this->db->bind(':email',$email);
             $row = $this->db->single();
-
             if($this->db->rowCount() > 0){
-                return $row;
+                return true;
             }else{
                 return false;
             }
@@ -30,7 +30,7 @@
             if($this->db->execute()){
                 return true;
             }else{
-                return 5;
+                return false;
             }
         }
     }

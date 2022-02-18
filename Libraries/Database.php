@@ -1,11 +1,8 @@
 <?php 
 
     class Database{
-        private $host = 'localhost';
         private $user = 'root';
         private $pass = '';
-        private $dbname = 'e-recrutement';
-
         private $dbh;
         private $stmt;
         private $error;
