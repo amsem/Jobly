@@ -1,288 +1,351 @@
 <!<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/bouncer.css">
-	<link rel="stylesheet" type="text/css" href="css/container4.css">
-	<link rel="stylesheet" type="text/css" href="css/container1.css">
-	<link rel="stylesheet" type="text/css" href="css/container2.css">
-	<link rel="stylesheet" type="text/css" href="css/container3.css">
-	<link rel="stylesheet" type="text/css" href="css/container5.css">
-	<title>bienvenu!</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/bouncer.css" />
+    <link rel="stylesheet" type="text/css" href="css/container4.css" />
+    <link rel="stylesheet" type="text/css" href="css/container1.css" />
+    <link rel="stylesheet" type="text/css" href="css/container2.css" />
+    <link rel="stylesheet" type="text/css" href="css/container3.css" />
+    <link rel="stylesheet" type="text/css" href="css/container5.css" />
+    <title>bienvenu!</title>
+  </head>
+  <body>
+    <!--bouncing balls-->
+    <div class="bouncer">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav
+      class="navbar content is-medium mb-0 p-0"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navbarBasicExample">
+        <div class="navbar-start">
+          <a class="navbar-brand"
+            ><img class="logo mr-5 mt-5 ml-3" src="images/Group46.png"
+          /></a>
+          <div class="srch mt-5">
+            <input
+              class="searchbar"
+              type="search"
+              placeholder="Search here for offers"
+              aria-label="Search"
+            />
+            <button class="btn2 pt-3" type="submit">Search</button>
+          </div>
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item js-modal-trigger" data-target="modal-js-example"
+            >register</a
+          >
+          <a
+            class="navbar-item js-modal-trigger"
+            data-target="modal-js-example2"
+            >login</a
+          >
+          <a class="navbar-item">offers</a>
+          <a class="navbar-item">contact us</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container1">
+      <div class="columns">
+        <div class="column is-6-desktop main-content">
+          <div class="content main">
+            <h2 class="title">Let's get the Job done!</h2>
+            <p>find the perfect candidate for your Business with one click .</p>
+            <div class="parentbtn">
+              <button
+                id="buy"
+                class="js-modal-trigger button btn is-medium"
+                data-target="modal-js-example"
+              >
+                sign up now!
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="column is-5-desktop image-principale">
+          <img class="main-image" src="images/Group42.png" />
+        </div>
+      </div>
+    </div>
+    <div class="container3">
+      <h2>How it works</h2>
+      <img src="images/img2.svg" />
+    </div>
+    <div class="container4">
+      <h2>Why our website</h2>
+      <div class="columns is-2-tablet">
+        <div class="column is-3-desktop is-3-tablet">
+          <div class="card">
+            <div class="card-content">
+              <img class="icons" src="images/image34.png" />
+              <h3 class="card-title">easy to use</h3>
+              <div class="content">
+                what makes us stand out is the easability of use, both for the
+                recruiter and the employee
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-3-desktop is-3-tablet">
+          <div class="card">
+            <div class="card-content">
+              <img class="icons" src="images/image33.png" />
+              <h3 class="card-title">reliable</h3>
+              <div class="content">
+                our main purpose isnt to just establish a business , but also
+                establish a community.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-3-desktop is-3-tablet">
+          <div class="card">
+            <div class="card-content">
+              <img class="icons" src="images/image32.png" />
+              <h3 class="card-title">fast</h3>
+              <div class="content">
+                and beacuse we know how important time is for you, we designed
+                our website so it can deliver results fast and in the most
+                efficient way possible.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal-js-example2" class="modal">
+      <div class="modal-background">
+        <style type="text/css">
+          .modal-background {
+            opacity: 0;
+          }
+        </style>
+      </div>
+      <div class="modal-content">
+        <form action="/Controller/Users.php" method="post">
+          <div class="box">
+            <h2 class="title pl-1">login to your account</h2>
+            <div class="field">
+              <label class="label">Username</label>
+              <div class="control">
+                <input class="input" type="text" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input class="input" type="text" />
+              </div>
+              <label class="label label2"
+                ><a href="#">Forgot Password?</a></label
+              >
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link has-background-black">
+                  login
+                </button>
+              </div>
+              <div class="control">
+                <button class="button is-link is-light">Cancel</button>
+              </div>
+            </div>
+            <label class="label label2">
+              Don't have an account? <a href="#">Create one!</a>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="modal-js-example" class="modal">
+      <div class="modal-background">
+        <style type="text/css">
+          .modal-background {
+            opacity: 0;
+          }
+        </style>
+      </div>
+      <div class="modal-content">
+        <form action="../Controller/Users.php" method="post">
+          <div class="box">
+            <h2 class="title pl-1">Create an account</h2>
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" type="text" name="name" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Family Name</label>
+              <div class="control">
+                <input class="input" type="text" name="family_name" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Username</label>
+              <div class="control">
+                <input class="input" type="text" name="user" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="email" name="email" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input class="input" type="password" name="password" />
+              </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+            <div class="field is-grouped">
+              <div class="control">
+                <button
+                  class="button is-link has-background-black"
+                  type="submit"
+                  name="submit"
+                >
+                  Submit
+                </button>
+              </div>
+              <div class="control">
+                <button class="button is-link is-light">Cancel</button>
+              </div>
+            </div>
+            <label class="label label2">
+              Already have an account? <a href="#">Log in</a>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="container2">
+      <div class="columns">
+        <div class="column content is-medium has-text-black">
+          <h2>Find candidates according to category</h2>
+          <p class="des ml-3 mr-0 pr-0">
+            to make it easy for you to browse through the differnet listings, we
+            have seperated them through different categories , let’s check some
+            of them out !
+          </p>
+        </div>
+        <div class="column">
+          <img class="table" src="images/Group47.png" />
+        </div>
+      </div>
+    </div>
+    <div class="container5">
+      <div class="contactus">
+        <h2 class="title pl-1">contact us</h2>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="enter your name here"
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="enter your Email" />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              placeholder="enter the message here"
+            ></textarea>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer class="footer ourfooter">
+    <div class="content has-text-centered">
+      <div class="columns">
+        <div class="column column1 is-6-desktop ml-3 has-text-white">
+          <h2 class="title has-text-white">Find us on social media</h2>
+          <p class="paragraph ml-2">
+            Even if a website or a certian product delivers the best quality of
+            work and is up to oyur standards, it still makes a difference
+            meeting the team behind the whole thing. So join us ! And let’s live
+            the experience Together!
+          </p>
+        </div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"
+      integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js"
+      integrity="sha512-pvDW4tehKKsohH97164HwKwRGFpzayEFWTVbk8HuUoLIQ7Jp+WLN5XYokVuoCj2aT6dy8ihbW8SRTG1k0W4mSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js"
+      integrity="sha512-pvDW4tehKKsohH97164HwKwRGFpzayEFWTVbk8HuUoLIQ7Jp+WLN5XYokVuoCj2aT6dy8ihbW8SRTG1k0W4mSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"
+      integrity="sha512-ocsFo48WU8Xq6Y1Lwi7psXRAujG9E4TKNR4q1DbrKzaaxOMTEoao/a+mDoB+cYzY4lwbyxvqjkp/ZA1/MNlfsg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/BezierPlugin.min.js"
+      integrity="sha512-plyexAULVlTExvDn2yUZFJV9F8q+53MC/GpU9dEuNGXmrrI3J8Rcffjvxg3OOBALBvF+UILPLIBEoCeF2maqTQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
-</head>
-<body>
-		<!--bouncing balls-->
-	<div class="bouncer">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
-	<nav class="navbar content is-medium mb-0 p-0" role="navigation" aria-label="main navigation">
-		<div class="navbar-brand">
-			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-			    <span aria-hidden="true"></span>
-			    <span aria-hidden="true"></span>
-			    <span aria-hidden="true"></span>
-			</a>
-		</div>
-		<div class="navbar-menu" id="navbarBasicExample">
-			<div class="navbar-start">
-				<a class="navbar-brand"><img class="logo mr-5 mt-5 ml-3" src="images/Group46.png"></a>
-				<div class="srch mt-5 ">
-					<input class="searchbar" type="search" placeholder="Search here for offers" aria-label="Search">
-					<button class="btn2 pt-3" type="submit">Search</button>					
-				</div>
-			</div>
-			<div class="navbar-end ">
-				<a class="navbar-item js-modal-trigger" data-target="modal-js-example">register</a>
-				<a class="navbar-item js-modal-trigger" data-target="modal-js-example2">login</a>
-				<a class="navbar-item ">offers</a>
-				<a class="navbar-item ">contact us</a>
-			</div>
-		</div>
-	</nav>
-	<div class="container1">
-		<div class="columns">
-
-			<div class="column is-6-desktop main-content ">
-				<div class="content main">
-					<h2 class="title ">Let's get the Job done!</h2>	
-					<p>find the perfect candidate for your
-					Business with one click .</p>
-					<div class="parentbtn">
-						<button id="buy" class="js-modal-trigger button btn is-medium" data-target="modal-js-example">
-						  sign up now!
-						</button>				
-					</div>
-				</div>				
-
-			</div>
-			<div class="column is-5-desktop image-principale">
-				<img class="main-image" src="images/Group42.png">	
-			</div>
-
-		</div>
-	</div>
-	<div class="container3">
-		<h2>How it works</h2>
-		<img src="images/img2.svg">
-	</div>
-	<div class="container4">
-		<h2>Why our website</h2>
-		<div class="columns is-2-tablet">
-			<div class="column is-3-desktop is-3-tablet">
-				<div class="card">
-				  <div class="card-content">
-				  	<img class="icons" src="images/image34.png">
-				  	<h3 class="card-title">easy to use</h3>
-				    <div class="content">
-						what makes us stand 
-						out is the easability 
-						of use, both for the
-						recruiter and 
-						the employee
-				    </div>
-				  </div>
-				</div>
-			</div>
-			<div class="column is-3-desktop is-3-tablet">
-				<div class="card">
-				  <div class="card-content">
-				  	<img class="icons" src="images/image33.png">
-				  	<h3 class="card-title">reliable</h3>
-				    <div class="content">
-						our main purpose 
-						isnt to just establish
-						a business , but 
-						also establish
-						a community.
-				    </div>
-				  </div>
-				</div>	
-			</div>
-			<div class="column is-3-desktop is-3-tablet">
-				<div class="card">
-				  <div class="card-content">
-				  	<img class="icons" src="images/image32.png">
-				  	<h3 class="card-title">fast</h3>
-				    <div class="content">
-						and beacuse we know
-						how important time is
-						for you, we designed 
-						our website so it can 
-						deliver results fast and 
-						in the most efficient
-						way possible.  
-				    </div>
-				  </div>
-				</div>							
-			</div>					
-		</div>
-	</div>
-	<div id="modal-js-example2" class="modal">
-		<div class="modal-background">
-			<style type="text/css">
-				.modal-background{
-					opacity: 0;
-				}
-			</style>
-		</div>
-		<div class="modal-content">
-		    <div class="box">
-		    	<h2 class="title pl-1">login to your account</h2>
-		    	<div class="field">
-					<label class="label">Username</label>
-					<div class="control">
-					    <input class="input" type="text" >
-					</div>
-				</div>
-				<div class="field">
-					<label class="label">Email</label>
-					<div class="control">
-						<input class="input" type="email">
-					</div>
-				</div>
-				<div class="field">
-					<label class="label">Password</label>
-					<div class="control">
-						<input class="input" type="text" >
-					</div>
-					<label class="label label2"><a href="#">Forgot Password?</a></label>
-				</div>
-				<button class="modal-close is-large" aria-label="close"></button>
-				<div class="field is-grouped">
-					<div class="control">
-					    <button class="button is-link has-background-black">login</button>
-					</div>
-					<div class="control">
-					    <button class="button is-link is-light">Cancel</button>
-					</div>
-				</div>
-				<label class="label label2">Don't have an account? <a href="#">Create one!</a></label>
-			</div>
-		</div>
-	</div>
-	<div id="modal-js-example" class="modal">
-		<div class="modal-background">
-			<style type="text/css">
-				.modal-background{
-					opacity: 0;
-				}
-			</style>
-		</div>
-		<div class="modal-content">
-		    <div class="box">
-		    	<h2 class="title pl-1">Create an account</h2>
-		    	<div class="field">
-					<label class="label">Name</label>
-					<div class="control">
-						<input class="input" type="text">
-					</div>
-				</div>
-				<div class="field">
-					<label class="label">Family Name</label>
-					<div class="control">
-					    <input class="input" type="text">
-					</div>
-				</div>
-				<div class="field">
-					<label class="label">Username</label>
-					<div class="control">
-						<input class="input" type="text" >
-					</div>
-				</div>
-				<div class="field">
-					<label class="label">Email</label>
-					<div class="control">
-						<input class="input" type="email" >
-					</div>
-				</div>
-				<button class="modal-close is-large" aria-label="close"></button>
-				<div class="field is-grouped">
-					<div class="control">
-					    <button class="button is-link has-background-black">Submit</button>
-					</div>
-					<div class="control">
-					    <button class="button is-link is-light">Cancel</button>
-					</div>
-				</div>
-				<label class="label label2">Already have an account? <a href="#">Log in</a></label>
-		    </div>
-		</div>
-	</div>	
-	<div class="container2">
-		<div class="columns">
-			<div class="column  content is-medium has-text-black ">
-				<h2 >Find candidates according to category</h2>
-				<p class="des ml-3 mr-0 pr-0">
-					to make it easy for you to browse 
-					through the differnet listings, we 
-					have seperated them through
-					different categories , let’s check 
-					some of them out !</p>
-			</div>
-			<div class="column">
-			<img class="table" src="images/Group47.png">	
-			</div>
-		</div>
-	</div>
-	<div class="container5">
-		<div class="contactus">
-	    	<h2 class="title pl-1">contact us</h2>
-	    	<div class="field">
-				<label class="label">Name</label>
-				<div class="control">
-					<input class="input" type="text" placeholder="enter your name here">
-				</div>
-			</div>
-			<div class="field">
-				<label class="label">Email</label>
-				<div class="control">
-					<input class="input" type="email" placeholder="enter your Email">
-				</div>
-			</div>
-			<div class="field">
-				<label class="label">Message</label>
-				<div class="control">
-					<textarea class="textarea" placeholder="enter the message here"></textarea>
-				</div>
-			</div>
-				<div class="field is-grouped">
-					<div class="control">
-						<button class="button is-link ">Submit</button>
-					</div>
-				</div>
-		</div>
-	</div>
-</body>	
-<footer class="footer ourfooter">
-	<div class="content has-text-centered">
-		<div class="columns">
-			<div class="column column1 is-6-desktop ml-3 has-text-white">
-				<h2 class="title has-text-white">Find us on social media</h2>
-				<p class="paragraph ml-2">Even if a website or a certian product delivers 
-				the best quality of work and is up to oyur standards,
-				it still makes a difference meeting the team behind the
-				whole thing.
-				So join us ! And let’s live the experience Together!</p>
-			</div>
-			<div class="column">
-				
-			</div>
-		</div>
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js" integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js" integrity="sha512-pvDW4tehKKsohH97164HwKwRGFpzayEFWTVbk8HuUoLIQ7Jp+WLN5XYokVuoCj2aT6dy8ihbW8SRTG1k0W4mSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js" integrity="sha512-pvDW4tehKKsohH97164HwKwRGFpzayEFWTVbk8HuUoLIQ7Jp+WLN5XYokVuoCj2aT6dy8ihbW8SRTG1k0W4mSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js" integrity="sha512-ocsFo48WU8Xq6Y1Lwi7psXRAujG9E4TKNR4q1DbrKzaaxOMTEoao/a+mDoB+cYzY4lwbyxvqjkp/ZA1/MNlfsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/BezierPlugin.min.js" integrity="sha512-plyexAULVlTExvDn2yUZFJV9F8q+53MC/GpU9dEuNGXmrrI3J8Rcffjvxg3OOBALBvF+UILPLIBEoCeF2maqTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-	<script type="text/javascript" src="js/main.js"></script>
-</footer>
+    <script type="text/javascript" src="js/main.js"></script>
+  </footer>
 </html>
