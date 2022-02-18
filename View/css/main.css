@@ -4,30 +4,19 @@ html{
 *{
 	font-family: 'Alegreya','Heebo','Muli','Poppins', serif;
 }
-
-.ourfooter{
-	background-color:#24242c;
-}
-.contact{
-	background:white;
-	border-radius: 10px;
-
-}
 .box{
 	box-shadow: 0 25px 45px rgba(0,0,0,0.1);
-	border: 1px solid rgba(255,255,255,0.5);
+	border: 2px solid whitesmoke;
 	border-right: 1px solid rgba(255,255,255,0.2);
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 	border-radius: 15px;
 	z-index: 10;
 	backdrop-filter: blur(10px);
-	background: rgba(0,0,0,0.45);
+	background: linear-gradient(180deg, rgba(122, 122, 122, 0.15) 0%, rgba(149, 149, 149, 0.09) 100%);
 	padding: 30px;
 	padding-bottom: 20px;
 }
-.box .title,.box .label , .box input, .box .control, .box textarea{
-	color: white;
-}
+
 .box .button{
 	border-radius: 5px;
 
@@ -41,30 +30,36 @@ html{
 	padding-left: 10px;
 }
 .box .label2{
-	font-size:.75rem;
-	margin-top: 4px;
-	margin-left: 10px;
-	color: white;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	}
+.box a{
+	color: black;
+	font-weight: bolder;
+
 }
 .box input{
 	font-size: 1.25rem;
-	border-radius: 5px;
-	background: rgba(255,255,255,0.2);
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
 }
 .box .title{
-	padding-top:0;
-	margin-bottom: 10px;
-	font-size: 1.5rem;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 25px;
 }
-
-		/* bouncing balls*/
 
 .title{
 	font:Poppins;
 	font-size: 2rem;
 }
-.navbar-item{
-	font: Poppins;
-	font-weight:bold;
-	font-size:1.25rem;
+.ourfooter{
+	background-color:#00A1C4;
+	margin-top: 100px;
+}
+footer .column1{
+	
 }
