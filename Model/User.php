@@ -13,7 +13,7 @@
             $this->db->bind(':email',$email);
             $row = $this->db->single();
             if($this->db->rowCount() > 0){
-                return true;
+                return $row;
             }else{
                 return false;
             }
@@ -29,6 +29,18 @@
             
             if($this->db->execute()){
                 return true;
+            }else{
+                return false;
+            }
+        }
+
+        public function login($username,$password){
+            $row = $this->checkIfUserExists($username,$username);
+            if($row == false) return false;
+
+            $hashedPass = $row->password;
+            if(password_verify($password,$hashedPass)){
+                return $row;
             }else{
                 return false;
             }

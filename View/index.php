@@ -76,19 +76,19 @@
         </style>
       </div>
       <div class="modal-content">
-        <form action="/Controller/Users.php" method="post">
+        <form action="../Controller/Users.php" method="post">
           <div class="box">
             <h2 class="title pl-1">login to your account</h2>
             <div class="field">
               <label class="label">Username</label>
               <div class="control">
-                <input class="input" type="text" />
+                <input class="input" type="text" name="user" />
               </div>
             </div>
             <div class="field">
               <label class="label">Password</label>
               <div class="control">
-                <input class="input" type="text" />
+                <input class="input" type="password" name="password" />
               </div>
               <label class="label label2"
                 ><a href="#">Forgot Password?</a></label
@@ -97,7 +97,7 @@
             <button class="modal-close is-large" aria-label="close"></button>
             <div class="field is-grouped">
               <div class="control">
-                <button class="button is-link has-background-black">
+                <button class="button is-link has-background-black" name="login">
                   login
                 </button>
               </div>
