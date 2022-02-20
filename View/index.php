@@ -154,6 +154,15 @@
                 <input class="input" type="password" name="password" />
               </div>
             </div>
+            <div class="field">
+              <div class="control">
+                <select name="type" id="type">
+                  <option value="" disabled selected>Choose your account type</option>
+                  <option value="recruteur">Recruteur</option>
+                  <option value="candidateur">Candidateur</option>
+                </select>
+              </div>
+            </div>
             <button class="modal-close is-large" aria-label="close"></button>
             <div class="field is-grouped">
               <div class="control">

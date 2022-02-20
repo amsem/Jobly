@@ -1,5 +1,5 @@
 <?php 
-    include "../Libraries/Database.php";
+    include_once "../Libraries/Database.php";
 
     class User{
         private $db;

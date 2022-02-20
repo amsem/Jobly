@@ -1,9 +1,12 @@
 <?php 
     include "../Model/User.php";
+    include "../Model/Role.php";
     class Users{
         private $userModel;
+        private $roleModel;
         public function __construct(){
             $this->userModel = new User;
+            $this->roleModel = new Role;
         }
         public function register(){
             $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
@@ -12,7 +15,8 @@
                 'family_name' => trim($_POST['family_name']),
                 'email' => trim($_POST['email']),
                 'user' => trim($_POST['user']),
-                'password' => trim($_POST['password'])
+                'password' => trim($_POST['password']),
+                'type' => trim($_POST['type'])
             ];
 
             if($this->userModel->checkIfUserExists($data['user'],$data['email'])){
@@ -23,7 +27,10 @@
             $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
 
             if($this->userModel->register($data)){
-                header("Location: ../view/index.php");
+                $row = $this->userModel->checkIfUserExists($data['user'],$data['email']);
+                if($this->roleModel->setRole($data['type'],$row->user_id)){
+                    header("Location: ../view/index.php");
+                }
             }else{
                 die("Something went wrong");
             }
@@ -52,8 +59,8 @@
 
         public function makeSession($user){
             $_SESSION['id'] = $user->id;
-            $_SESSION['user'] = $user->id;
-            $_SESSION['email'] = $user->id;
+            $_SESSION['user'] = $user->user;
+            $_SESSION['email'] = $user->email;
         }
 
     }
