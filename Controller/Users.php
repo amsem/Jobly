@@ -47,8 +47,15 @@
             if($this->userModel->checkIfUserExists($data['user'],$data['user'])){
                 $logged = $this->userModel->login($data['user'],$data['password']);
                 if($logged){
-                    $this->makeSession($logged);
-                    echo "hi";
+                    if($role = $this->roleModel->getRole($logged->user_id)){
+                        $this->makeSession($logged,$role);
+                        if($_SESSION['role'] == "recruteur"){
+                            echo $_SESSION['user'] .  $_SESSION['role'];
+                        }else{
+                            echo $_SESSION['user'] . $_SESSION['role'];
+                        }
+                    }
+
                 }else{
                     echo "password incorrect";
                 }
@@ -57,10 +64,11 @@
             }
         }
 
-        public function makeSession($user){
-            $_SESSION['id'] = $user->id;
+        public function makeSession($user,$role){
+            $_SESSION['id'] = $user->user_id;
             $_SESSION['user'] = $user->user;
             $_SESSION['email'] = $user->email;
+            $_SESSION['role'] =  $role->role;
         }
 
     }
