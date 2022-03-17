@@ -1,4 +1,7 @@
-<?php include("template/header.php"); ?>
+<?php 
+  include_once "template/header.php"; 
+  include_once "../Libraries/flash.php";
+?>
     <div class="container1">
       <div class="columns">
         <div class="column is-6-desktop main-content">
@@ -79,6 +82,7 @@
         <form action="../Controller/Users.php" method="post">
           <div class="box">
             <h2 class="title pl-1">login to your account</h2>
+            <?php flash('login');?>
             <div class="field">
               <label class="label">Username</label>
               <div class="control">
@@ -124,6 +128,7 @@
         <form action="../Controller/Users.php" method="post">
           <div class="box">
             <h2 class="title pl-1">Create an account</h2>
+            <?php flash('register');?>
             <div class="field">
               <label class="label">Name</label>
               <div class="control">
@@ -169,9 +174,9 @@
                 <button
                   class="button is-link has-background-black"
                   type="submit"
-                  name="submit"
+                  name="register"
                 >
-                  Submit
+                  Register
                 </button>
               </div>
               <div class="control">
@@ -236,4 +241,4 @@
       </div>
     </div>
   </body>
-  <?php include("template/footer.php"); ?>
+  <?php include_once "template/footer.php"; ?>

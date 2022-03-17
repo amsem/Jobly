@@ -1,6 +1,7 @@
 <?php 
-    include "../Model/User.php";
-    include "../Model/Role.php";
+    require_once "../Model/User.php";
+    require_once "../Model/Role.php";
+    require_once "../Libraries/flash.php";
     class Users{
         private $userModel;
         private $roleModel;
@@ -9,7 +10,6 @@
             $this->roleModel = new Role;
         }
         public function register(){
-            $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
             $data = [
                 'name' => trim($_POST['name']),
                 'family_name' => trim($_POST['family_name']),
@@ -19,9 +19,30 @@
                 'type' => trim($_POST['type'])
             ];
 
-            if($this->userModel->checkIfUserExists($data['user'],$data['email'])){
+            if(empty($data['user']) || empty($data['email']) || empty($data['family_name']) || 
+            empty($data['password']) || empty($data['name']) || empty($data['type'])){
+                flash("register", "Please fill out all inputs");
                 header("Location: ../view/index.php");
-                die();
+            }
+
+            if(!preg_match("/^[A-Za-z0-9]*$/", $data['user'])){
+                flash("register", "Invalid username");
+                header("Location: ../view/index.php");
+            }
+
+            if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+                flash("register", "Invalid email");
+                header("Location: ../view/index.php");
+            }
+
+            if(strlen($data['password']) < 8){
+                flash("register", "Invalid password");
+                header("Location: ../view/index.php");
+            }
+
+            if($this->userModel->checkIfUserExists($data['user'],$data['email'])){
+                flash("register", "Username or email already taken");
+                header("Location: ../view/index.php");
             }
 
             $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
@@ -37,13 +58,17 @@
         }
 
         public function login(){
-            $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
-
             $data = [
                 'user' => $_POST['user'],
                 'password' => $_POST['password']
             ];
 
+            if(empty($data['user']) || empty($data['password'])){
+                flash("login", "Please fill out all inputs");
+                header("Location: ../view/index.php");
+                exit();
+            }
+            
             if($this->userModel->checkIfUserExists($data['user'],$data['user'])){
                 $logged = $this->userModel->login($data['user'],$data['password']);
                 if($logged){
@@ -57,10 +82,12 @@
                     }
 
                 }else{
-                    echo "password incorrect";
+                    flash("login", "Password Incorrect");
+                    header("Location: ../view/index.php");
                 }
             }else{
-                echo "no user found";
+                flash("login", "No user found");
+                header("Location: ../view/index.php");
             }
         }
 
@@ -74,7 +101,7 @@
     }
     $init = new Users;
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if(isset($_POST['submit'])) $init->register();
+        if(isset($_POST['register'])) $init->register();
         if(isset($_POST['login'])) $init->login();
 
     }
