@@ -1,0 +1,75 @@
+.content_offres {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.offres {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.card_offres {
+  width: 100%;
+  background-color: #fafafa;
+  text-decoration: none;
+  padding: 1.2em;
+  border-bottom: 1px solid black;
+}
+.head_offres {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.head_offres h3 {
+  margin-left: 1em;
+}
+.card_offres img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.details_offres {
+  padding: 12px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.details_offres h4 {
+  margin-bottom: 4px;
+}
+.main_offres {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2em;
+  width: 50vw;
+  line-height: 1.5;
+}
+.company_offres {
+  width: 100%;
+}
+.company_offres span {
+  font-size: 2em;
+  font-weight: 600;
+}
+.company_offres p {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.description {
+  width: 100%;
+}
+.time {
+  margin-top: 20px;
+}
+button {
+  margin-top: 20px;
+}
