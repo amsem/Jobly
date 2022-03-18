@@ -1,0 +1,87 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: "Alegreya", "Heebo", "Muli", "Poppins", serif;
+}
+.box {
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 2px solid whitesmoke;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    180deg,
+    rgba(122, 122, 122, 0.15) 0%,
+    rgba(149, 149, 149, 0.09) 100%
+  );
+  padding: 30px;
+  padding-bottom: 20px;
+}
+
+.box .button {
+  border-radius: 5px;
+}
+.box .button + .box .button {
+  margin-left: 80px;
+}
+.box .label {
+  font: Algereya;
+  background-color: transparent;
+  padding-left: 10px;
+}
+.box .label2 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+}
+.box a {
+  color: black;
+  font-weight: bolder;
+}
+.box input {
+  font-size: 1.25rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.box .title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.title {
+  font: Poppins;
+  font-size: 2rem;
+}
+.ourfooter {
+  background-color: #00a1c4;
+  margin-top: 100px;
+}
+footer .column1 {
+}
+.form-message {
+  margin: 20px auto 0 auto;
+  border-radius: 10px;
+  text-transform: capitalize;
+  max-width: 560px;
+  width: 90%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-message p {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.form-message-red {
+  background-color: #ffb3b3;
+  border: 2px solid #ff0000;
+}

@@ -1,0 +1,121 @@
+.container1{
+	overflow: hidden;
+}
+.main-image{
+	size: 70vw auto;
+	padding-top: 20vh;
+
+
+}
+.main{
+	padding: 1em;
+	padding-right: 0;
+	margin-top: 11rem;
+	padding-left: 10vw;
+}
+.container1 .title{
+	text-align: center;
+}
+.container1 p{
+	padding: 0 80px;
+}
+.parentbtn{
+	padding-top: 2em;	
+	text-align: -moz-center;
+}
+.btn{
+	border: none;
+	color: white;
+	border-radius: 1rem;
+	background-color:#00F1F1;
+	padding:1em;
+	}
+.btn2{
+	color: black;
+	background-color: white;
+	border: none;
+	cursor: pointer;
+	font-family: Poppins;
+    font-style: normal;
+    font-weight: 450;
+    font-size: 20px;
+    opacity: 0.7;
+}
+.btn2:hover{
+	opacity: 1;
+}
+
+.searchbar{
+	border-radius: 8px;
+	border: 2px solid whitesmoke;
+	width: 25vw;
+	min-width: 220px;
+	background: #FCFCFC;
+	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+	height: 40px; 
+	background: url("../images/search.svg") center  left    no-repeat;
+	padding-left:45px;
+	background-size: 20px; 
+	background-position-x:10px ;
+	background-position-y:10px ;
+}
+input:focus{
+	outline: none !important;
+}
+.navbar-item{
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 450;
+	font-size: 20px;
+	line-height: 25px;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	background-size: 0% 2px !important;
+	background:linear-gradient(90deg,#14f7cc,#ff00d7);
+	background-position: left bottom 13px;
+	text-decoration: none;
+	background-repeat: no-repeat!important;
+	transition: background-size 800ms ease;
+}
+.navbar-item:hover{
+	background-size: 100% 2px!important;
+	color: black!important;
+}
+.logo{
+	width:80px ;
+	height: auto;
+}
+@media only screen and (max-width: 1100px){
+	.main-image{
+		padding-left: 0;
+	}
+	.navbar-item:hover{
+		background-size: 0% !important;
+	}
+	.navbar-start, .navbar-end{
+		padding-left: 20px!important;
+	}
+	.logo{
+		margin: 0!important;
+	}
+
+}
+@media only screen and (max-width: 767px){
+	.main-image{
+		display: none;
+	}
+	.main{
+		background:linear-gradient(rgba(0,0,0,0.6),rgba(0, 0, 0, 0.35)),url('../images/Group42.png');
+		background-size: cover;
+		margin-top: 0;
+		padding: 3rem;
+		padding-right: 0;
+	}
+	.container1 .title, .container1 p{
+		color: white;
+	}
+	.container2{
+		padding-left: 0;
+	}
+}
+
