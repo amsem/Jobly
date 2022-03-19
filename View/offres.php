@@ -45,6 +45,10 @@
           <div class="salaire">
             <p><?php echo $job_det->salary; ?>DA</p>
           </div>
+          <?php 
+            echo'<input type="text" name="job_id" value="'.$_GET['id'].'" hidden>';
+            echo'<input type="text" name="user_id" value="'.$_SESSION['id'].'" hidden>';
+          ?>
           <button class="button is-link has-background-black" name="Apply">
             Apply now
             </button>
