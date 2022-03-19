@@ -14,7 +14,7 @@
                 class="js-modal-trigger button btn is-medium"
                 data-target="modal-js-example"
               >
-                sign up now!
+                Sign up now!
               </button>
             </div>
           </div>
