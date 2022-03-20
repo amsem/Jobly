@@ -1,0 +1,91 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+.content_offres {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .offres {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .card_offres {
+    width: 100%;
+    background-color: #fafafa;
+    text-decoration: none;
+    padding: 1.2em;
+    border-bottom: 1px solid black;
+  }
+  .head_offres {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .head_offres h3 {
+    margin-left: 1em;
+  }
+  .card_offres img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .details_offres {
+    padding: 12px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+  .details_offres h4 {
+    margin-bottom: 4px;
+  }
+  .main_candidate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2em;
+    width: 50vw;
+    line-height: 1.5;
+  }
+
+  .card_candidate{
+    width: 100%;
+    background-color: #fafafa;
+    text-decoration: none;
+    padding: 1.2em;
+    border-bottom: 1px solid black;
+  }
+  .omar {
+    margin-bottom: 10px;
+  }
+  .test {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(173, 207, 207);
+    color: azure;
+  }
+  .mega {
+    z-index: 10;
+    display: none;
+  }
+  .n {
+    height: 30px;
+    width: 30px;
+  }
+  .l {
+    height: 30px;
+    width: 30px;
+    transform: scale(-1);
+    display: none;
+  }
+  
