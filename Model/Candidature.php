@@ -18,6 +18,18 @@
                 return false;
             }
         }
+
+        public function checkIfAlreadyApplied($data){
+            $this->db->query('SELECT * FROM candidature WHERE job_id = :jobID AND user_id = :userID');
+            $this->db->bind(':jobID',$data['job_id']);
+            $this->db->bind(':userID',$data['user_id']);
+            $this->db->execute();
+            if($this->db->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
         
         
     }

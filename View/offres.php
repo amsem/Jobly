@@ -1,6 +1,7 @@
 <?php
     include_once "template/header.php";
     include_once "../Controller/Jobs.php";
+    include_once "../Libraries/flash.php";
     $test = new Jobs;
     $jobs = $test->getAllJobs();
     if(isset($_GET['id'])){ 
@@ -24,7 +25,9 @@
         </div>
         <?php } ?>
       </aside>
-      <?php if(isset($job_det)){ ?>
+      <?php 
+      flash('applied');
+      if(isset($job_det)){ ?>
       <main class="main_offres">
       <form action="../Controller/Candidatures.php" method="post">
         <div class="company_offres">

@@ -1,9 +1,10 @@
 <?php
     require_once "../Model/Candidature.php";
+    require_once "../Libraries/flash.php";
     class Jobs{
-        private $CandidatureModel;
+        private $candidatureModel;
         public function __construct(){
-            $this->CandidatureModel = new Candidature;
+            $this->candidatureModel = new Candidature;
         }
 
         public function addCandidature(){
@@ -11,10 +12,15 @@
                 'job_id' => trim($_POST['job_id']),
                 'user_id' => trim($_POST['user_id']),
             ];
-            if($this->CandidatureModel->addCandidature($data)){
-                header("Location: ../view/");
+            if($this->candidatureModel->checkIfAlreadyApplied($data)){
+                flash("applied", "You are already applied");
+                header("Location: ../view/offres.php");
             }else{
-                die("Something went wrong");
+                if($this->candidatureModel->addCandidature($data)){
+                    header("Location: ../view/index.php");
+                }else{
+                    die("Something went wrong");
+                }
             }
         }
     }
