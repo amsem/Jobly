@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="css/container3.css" />
     <link rel="stylesheet" type="text/css" href="css/container5.css" />
     <link rel="stylesheet" type="text/css" href="css/offres.css" />
+    <link rel="stylesheet" type="text/css" href="css/tocand.css" />
     <title>bienvenu!</title>
   </head>
   <body>

@@ -46,5 +46,6 @@
     ></script>
 
     <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/mega.js"></script>
   </footer>
 </html>

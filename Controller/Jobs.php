@@ -38,6 +38,15 @@
                 die("Something went wrong");
             }
         }
+
+        public function getAllJobsPostedByUser($id){
+            $jobs = $this->jobModel->getAllJobsPostedByUser($id);
+            if($jobs){
+                return $jobs;
+            }else{
+                die("Something went wrong");
+            }
+        }
     }
     $init = new Jobs;
     if($_SERVER['REQUEST_METHOD'] == 'POST'){

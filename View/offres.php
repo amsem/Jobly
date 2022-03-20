@@ -2,10 +2,10 @@
     include_once "template/header.php";
     include_once "../Controller/Jobs.php";
     include_once "../Libraries/flash.php";
-    $test = new Jobs;
-    $jobs = $test->getAllJobs();
+    $jobObject = new Jobs;
+    $jobs = $jobObject->getAllJobs();
     if(isset($_GET['id'])){ 
-        $job_det = $test->getJobDetails($_GET['id']);
+        $job_det = $jobObject->getJobDetails($_GET['id']);
     } 
 ?>
     <div class="content_offres">

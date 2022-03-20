@@ -19,6 +19,18 @@
             }
         }
 
+        public function getCandidatures($id){
+            $this->db->query('SELECT u.user,u.name,u.family_name,u.email FROM candidature c INNER JOIN users u ON c.user_id = u.user_id WHERE c.job_id = :job_id');
+            $this->db->bind(':job_id', $id);
+        
+            $row = $this->db->resultSet();
+            if($this->db->rowCount() > 0){
+                return $row;
+            }else{
+                return false;
+            }
+        }
+
         public function checkIfAlreadyApplied($data){
             $this->db->query('SELECT * FROM candidature WHERE job_id = :jobID AND user_id = :userID');
             $this->db->bind(':jobID',$data['job_id']);

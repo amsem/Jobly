@@ -1,7 +1,7 @@
 <?php
     require_once "../Model/Candidature.php";
     require_once "../Libraries/flash.php";
-    class Jobs{
+    class Candidatures{
         private $candidatureModel;
         public function __construct(){
             $this->candidatureModel = new Candidature;
@@ -23,8 +23,18 @@
                 }
             }
         }
+
+        public function getCandidatures($id){
+            $candidatures = $this->candidatureModel->getCandidatures($id);
+            if($candidatures){
+                return $candidatures;
+            }else{
+                die("Something went wrong");
+            }
+        }
+
     }
-    $init = new Jobs;
+    $init = new Candidatures;
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['Apply'])) $init->addCandidature();
 

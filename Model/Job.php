@@ -44,6 +44,16 @@
             }
         }
         
+        public function getAllJobsPostedByUser($id){
+            $this->db->query('SELECT * FROM jobs WHERE user_id = :id');
+            $this->db->bind(':id',$id);
+            $row = $this->db->resultSet();
+            if($this->db->rowCount() > 0){
+                return $row;
+            }else{
+                return false;
+            }
+        }
     }
 
 ?>
