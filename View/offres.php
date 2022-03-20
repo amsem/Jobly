@@ -51,10 +51,11 @@
           <?php 
             echo'<input type="text" name="job_id" value="'.$_GET['id'].'" hidden>';
             echo'<input type="text" name="user_id" value="'.$_SESSION['id'].'" hidden>';
-          ?>
-          <button class="button is-link has-background-black" name="Apply">
-            Apply now
-            </button>
+            if($_SESSION['role'] == "candidateur" ){ ?>
+              <button class="button is-link has-background-black" name="Apply">
+                Apply now
+              </button>
+          <?php } ?>
         </div>
       </form>
       </main>
