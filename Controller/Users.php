@@ -1,4 +1,4 @@
-<?php 
+<?php
     require_once "../Model/User.php";
     require_once "../Model/Role.php";
     require_once "../Libraries/flash.php";
@@ -75,9 +75,9 @@
                     if($role = $this->roleModel->getRole($logged->user_id)){
                         $this->makeSession($logged,$role);
                         if($_SESSION['role'] == "recruteur"){
-                            echo $_SESSION['user'] .  $_SESSION['role'];
+                            header("Location: ../view/dashboard.php");
                         }else{
-                            echo $_SESSION['user'] . $_SESSION['role'];
+                            header("Location: ../view/offres.php");
                         }
                     }
 
@@ -89,6 +89,14 @@
                 flash("login", "No user found");
                 header("Location: ../view/index.php");
             }
+        }
+
+        public function logout(){
+            unset($_SESSION['id']);
+            unset($_SESSION['user']);
+            unset($_SESSION['email']);
+            unset($_SESSION['role']);
+            header("Location: ../view/index.php");
         }
 
         public function makeSession($user,$role){
@@ -103,6 +111,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['register'])) $init->register();
         if(isset($_POST['login'])) $init->login();
+        if(isset($_POST['logout'])) $init->logout();
 
     }
 ?>

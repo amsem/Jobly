@@ -1,0 +1,3 @@
+Options -Indexes
+
+ErrorDocument 403 "You don't have authorization to access"
