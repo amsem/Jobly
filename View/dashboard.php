@@ -2,6 +2,7 @@
     include_once "template/header.php";
     include_once "../Controller/Jobs.php";
     include_once "../Controller/Candidatures.php";
+    if($_SESSION['role'] != "recruteur") header("Location: index.php");
     $jobObject = new Jobs;
     $candidatureObject = new Candidatures;
     $jobs = $jobObject->getAllJobsPostedByUser($_SESSION['id']);
