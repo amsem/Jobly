@@ -49,13 +49,14 @@
             <p><?php echo $job_det->salary; ?>DA</p>
           </div>
           <?php 
+          if(isset($_SESSION['id'])){
             echo'<input type="text" name="job_id" value="'.$_GET['id'].'" hidden>';
             echo'<input type="text" name="user_id" value="'.$_SESSION['id'].'" hidden>';
-            if($_SESSION['role'] == "candidateur" ){ ?>
-              <button class="button is-link has-background-black" name="Apply">
-                Apply now
-              </button>
-          <?php } ?>
+            if($_SESSION['role'] == "candidateur" ){ 
+              echo "<button class='button is-link has-background-black' name='Apply'>Apply now</button>";
+            }
+          } 
+        ?> 
         </div>
       </form>
       </main>

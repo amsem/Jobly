@@ -96,6 +96,7 @@
             unset($_SESSION['user']);
             unset($_SESSION['email']);
             unset($_SESSION['role']);
+            session_destroy();
             header("Location: ../view/index.php");
         }
 
@@ -111,7 +112,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['register'])) $init->register();
         if(isset($_POST['login'])) $init->login();
-        if(isset($_POST['logout'])) $init->logout();
-
+    }else{
+        if(isset($_GET['q'])) $init->logout();
     }
 ?>

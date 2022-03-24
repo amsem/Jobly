@@ -11,7 +11,9 @@
 ?>
   <div class="content_offres">
     <aside class="offres">
-      <?php foreach ($jobs as $job){ ?>
+      <?php
+      flash("dashboard"); 
+      foreach ($jobs as $job){ ?>
         <div class="card_offres">
           <div class="head_offres">
             <img src="images/black.jpg" alt="" />
@@ -26,17 +28,20 @@
         </div>
         <?php } ?>
       </aside>
-      <?php if(isset($candidatures)) { ?>
+      <?php 
+      if(isset($candidatures)) { ?>
         <main class="main_candidate">
-        <?php foreach ($candidatures as $candidature){ ?>
+        <?php
+        flash("candidature"); 
+        foreach ($candidatures as $candidature){ ?>
             <div class="card_candidate"> 
               <div class="omar">
                 <div>Username: <?php echo $candidature->user; ?></div>
                 <div class="test" tabindex="1">See More</div>
                 <div class="mega">
-                  <div>Email: <?php echo $candidature->email; ?></div>
-                  <div>Name: <?php echo $candidature->name; ?></div>
-                  <div>Family Name: <?php echo $candidature->family_name; ?></div>
+                  <div class="temp">Email: <?php echo $candidature->email; ?></div>
+                  <div class="temp">Name: <?php echo $candidature->name; ?></div>
+                  <div class="temp">Family Name: <?php echo $candidature->family_name; ?></div>
                 </div>
               </div>
             </div>

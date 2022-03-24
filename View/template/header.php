@@ -49,7 +49,7 @@
       </div>
       <div class="navbar-menu" id="navbarBasicExample">
         <div class="navbar-start">
-          <a class="navbar-brand"
+          <a class="navbar-brand" href="index.php"
             ><img class="logo mr-5 mt-5 ml-3" src="images/Group46.png"
           /></a>
           <div class="srch mt-5">
@@ -63,6 +63,11 @@
           </div>
         </div>
         <div class="navbar-end">
+          <?php if(isset($_SESSION['id'])){
+            if($_SESSION['role'] == "recruteur" ) echo '<button class="js-modal-trigger button btn is-medium" data-target="ourpostjob">post a job</button>'; 
+
+            echo '<a class="navbar-item" href="../Controller/Users.php?q=logout">logout</a>';
+          }else{ ?>
           <a class="navbar-item js-modal-trigger" data-target="modal-js-example"
             >register</a
           >
@@ -71,8 +76,16 @@
             data-target="modal-js-example2"
             >login</a
           >
-          <a class="navbar-item">offers</a>
-          <a class="navbar-item">contact us</a>
+          <?php } ?>
+          <a class="navbar-item" href="offres.php">offers</a>
+          <?php
+           if(isset($_SESSION['role'])){
+              if($_SESSION['role'] == "candidateur") echo '<div class="navbar-item" >'.$_SESSION['user'].'</div>';
+              else if($_SESSION['role'] == "recruteur") echo '<a class="navbar-item" href="dashboard.php">'.$_SESSION['user'].'</a>';
+           }
+              else echo "<a class='navbar-item'>contact us</a>";
+          ?>
+          
         </div>
       </div>
     </nav>

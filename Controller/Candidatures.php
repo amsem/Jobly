@@ -29,7 +29,8 @@
             if($candidatures){
                 return $candidatures;
             }else{
-                die("Something went wrong");
+                flash("candidature", "There isn't any candidate");
+                return Array();
             }
         }
 

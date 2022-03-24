@@ -44,7 +44,8 @@
             if($jobs){
                 return $jobs;
             }else{
-                die("Something went wrong");
+                flash("dashboard", "You did't post any job");
+                return Array();
             }
         }
     }

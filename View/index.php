@@ -8,8 +8,9 @@
           <div class="content main">
             <h2 class="title">Let's get the Job done!</h2>
             <p>find the perfect candidate for your Business with one click .</p>
+            <?php if(!isset($_SESSION['id'])){ ?>  
             <div class="parentbtn">
-              <button
+            <button
                 id="buy"
                 class="js-modal-trigger button btn is-medium"
                 data-target="modal-js-example"
@@ -17,6 +18,7 @@
                 Sign up now!
               </button>
             </div>
+            <?php } ?>  
           </div>
         </div>
         <div class="column is-5-desktop image-principale">

@@ -1,5 +1,6 @@
 <?php 
-    class Role extends User{
+    require_once "../Libraries/Database.php";
+    class Role{
         private $db;
         public function __construct(){
             $this->db = new Database;
