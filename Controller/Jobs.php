@@ -15,7 +15,7 @@
                 'userID' => trim($_POST['userID'])
             ];
             if($this->jobModel->postJob($data)){
-                header("Location: ../view/jobs.php");
+                header("Location: ../view/dashboard.php");
             }else{
                 die("Something went wrong");
             }
