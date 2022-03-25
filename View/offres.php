@@ -8,6 +8,11 @@
         $job_det = $jobObject->getJobDetails($_GET['id']);
     } 
 ?>
+  <?php 
+    if(isset($_SESSION['role'])){
+      if($_SESSION['role'] == 'recruteur') include_once "template/post-job.php"; 
+    }else include_once "template/login-register.php"; 
+  ?>
     <div class="content_offres">
       <aside class="offres">
       <?php foreach ($jobs as $job){ ?>
