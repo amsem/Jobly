@@ -25,6 +25,7 @@
         <form action="../Controller/Jobs.php" method="post">
         <div class="box">
           <h2 class="title pl-1">post a job</h2>
+          <?php flash("job"); ?>
           <div class="field">
             <label class="label">title</label>
             <div class="control">

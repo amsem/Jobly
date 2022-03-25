@@ -1,5 +1,6 @@
 <?php 
     require_once "../Model/Job.php";
+    require_once "../Libraries/flash.php";
     class Jobs{
         private $jobModel;
         public function __construct(){
@@ -14,6 +15,32 @@
                 'place' => trim($_POST['place']),
                 'userID' => trim($_POST['userID'])
             ];
+            
+            if(empty($data['title']) || empty($data['desc']) || empty($data['salary']) || 
+            empty($data['type']) || empty($data['place'])){
+                flash("job", "Please fill out all inputs");
+                header("Location: ../view/dashboard.php");
+                die();
+            }
+
+            if(!preg_match("/^[0-9]*$/", $data['salary'])){
+                flash("job", "Invalid number");
+                header("Location: ../view/dashboard.php");
+                die();
+            }
+
+            if($data['type'] != "full time" && $data['type'] != "part time"){
+                flash("job", "Please enter full/part time in employement type");
+                header("Location: ../view/dashboard.php");
+                die();
+            }
+
+            if($data['place'] != "distanciel" && $data['place'] != "presentiel"){
+                flash("job", "Please enter distanciel/presentiel in workplace type");
+                header("Location: ../view/dashboard.php");
+                die();
+            }
+
             if($this->jobModel->postJob($data)){
                 header("Location: ../view/dashboard.php");
             }else{

@@ -23,21 +23,25 @@
             empty($data['password']) || empty($data['name']) || empty($data['type'])){
                 flash("register", "Please fill out all inputs");
                 header("Location: ../view/index.php");
+                die();
             }
 
             if(!preg_match("/^[A-Za-z0-9]*$/", $data['user'])){
                 flash("register", "Invalid username");
                 header("Location: ../view/index.php");
+                die();
             }
 
             if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
                 flash("register", "Invalid email");
                 header("Location: ../view/index.php");
+                die();
             }
 
             if(strlen($data['password']) < 8){
                 flash("register", "Invalid password");
                 header("Location: ../view/index.php");
+                die();
             }
 
             if($this->userModel->checkIfUserExists($data['user'],$data['email'])){
