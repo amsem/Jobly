@@ -53,7 +53,7 @@
             if($jobs){
                 return $jobs;
             }else{
-                die("Something went wrong");
+                return Array();
             }
         }
 
