@@ -19,7 +19,7 @@
         <div class="card_offres">
           <div class="head_offres">
             <img src="images/black.jpg" alt="" />
-            <h3>charika name</h3>
+            <h3>Company name</h3>
           </div>
           <a href="?id=<?php echo $job->job_id; ?>">
             <div class="details_offres">
