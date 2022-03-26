@@ -18,8 +18,9 @@
 .test {
   width: 4em;
   height: 2em;
-  background-color: rgb(173, 207, 207);
-  color: azure;
+  background-color: #66f3eb;
+  color: black;
+  border-radius: 5px;
   cursor: pointer;
 }
 .mega {
