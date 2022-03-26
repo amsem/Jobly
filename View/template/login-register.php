@@ -89,7 +89,7 @@
             </div>
             <div class="field">
               <div class="control">
-                <select name="type" id="type">
+                <select name="type" id="type" class="input" style="background:rgba(0, 0, 0, 0.2);">
                   <option value="" disabled selected>Choose your account type</option>
                   <option value="recruteur">Recruteur</option>
                   <option value="candidateur">Candidateur</option>

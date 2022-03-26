@@ -21,15 +21,21 @@
             </div>
           </div>
           <div class="field">
-            <label class="label">workplace type</label>
             <div class="control">
-              <input class="input" type="text" placeholder="eg:remote,..." name="place" required/>
+            <select name="place" class="input" style="background:rgba(0, 0, 0, 0.2);">
+                  <option value="" disabled selected>Choose workplace type</option>
+                  <option value="distanciel">Distanciel</option>
+                  <option value="presentiel">Presentiel</option>
+                </select>
             </div>
           </div>
           <div class="field">
-            <label class="label">employement type</label>
             <div class="control">
-              <input class="input" type="text" placeholder="full-time..." name="type" required/>
+               <select name="type" class="input" style="background:rgba(0, 0, 0, 0.2);">
+                  <option value="" disabled selected>Choose employement type</option>
+                  <option value="full time">Full Time</option>
+                  <option value="part time">Part Time</option>
+                </select>
             </div>
           </div>
           <div class="field">
