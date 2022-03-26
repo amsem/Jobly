@@ -36,7 +36,7 @@
       <main class="main_offres">
       <form action="../Controller/Candidatures.php" method="post">
         <div class="company_offres">
-        <span>Charika name</span>
+        <span>Company name</span>
           <p>Location</p>
         </div>
         <div class="job_desc">
