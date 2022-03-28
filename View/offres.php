@@ -6,6 +6,7 @@
     $jobs = $jobObject->getAllJobs();
     if(isset($_GET['id'])){ 
         $job_det = $jobObject->getJobDetails($_GET['id']);
+        $_SESSION['job_id'] = $_GET['id'];
     } 
 ?>
   <?php 
@@ -55,13 +56,11 @@
           </div>
           <?php 
           if(isset($_SESSION['id'])){
-            echo'<input type="text" name="job_id" value="'.$_GET['id'].'" hidden>';
-            echo'<input type="text" name="user_id" value="'.$_SESSION['id'].'" hidden>';
             if($_SESSION['role'] == "candidateur" ){ 
               echo "<button class='button is-link has-background-black' name='Apply'>Apply now</button>";
-            }
-          } 
-        ?> 
+              }
+            } 
+          ?> 
         </div>
       </form>
       </main>

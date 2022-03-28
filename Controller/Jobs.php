@@ -13,7 +13,7 @@
                 'salary' => trim($_POST['salary']),
                 'type' => trim($_POST['type']),
                 'place' => trim($_POST['place']),
-                'userID' => trim($_POST['userID'])
+                'userID' => trim($_SESSION['id'])
             ];
             
             if(empty($data['title']) || empty($data['desc']) || empty($data['salary']) || 
