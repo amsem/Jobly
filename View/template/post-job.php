@@ -1,3 +1,6 @@
+<?php
+  
+?>
 <div id="ourpostjob" class="modal">
       <div class="modal-background">
         <style type="text/css">
@@ -53,7 +56,6 @@
               >keep it short and mention all the necessary skills.</label
             >
           </div>
-          <input type="number" value="<?php echo $_SESSION['id']; ?>" name="userID" hidden/>
           <button class="modal-close is-large" aria-label="close"></button>
           <div class="field is-grouped">
             <div class="control">
