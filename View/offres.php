@@ -35,7 +35,7 @@
       flash('applied');
       if(isset($job_det)){ ?>
       <main class="main_offres">
-      <form action="../Controller/Candidatures.php" method="post">
+      <form action="../Controller/Candidatures.php" method="post" enctype="multipart/form-data">
         <div class="company_offres">
         <span>Company name</span>
           <p>Location</p>
@@ -58,6 +58,8 @@
           if(isset($_SESSION['id'])){
             if($_SESSION['role'] == "candidateur" ){ 
               echo "<button class='button is-link has-background-black' name='Apply'>Apply now</button>";
+              echo "<input type='file' name='cv' class='file' />";
+              flash('file_error');
               }
             } 
           ?> 

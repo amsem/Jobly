@@ -6,8 +6,4 @@ for (let i = 0; i < test.length; i++) {
     mega[i].style.display = "flex";
     test[i].innerHTML = "See Less";
   });
-  test[i].addEventListener("blur", () => {
-    mega[i].style.display = "none";
-    test[i].innerHTML = "See More";
-  });
 }

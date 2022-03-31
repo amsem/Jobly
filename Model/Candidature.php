@@ -8,9 +8,10 @@
         }
 
         public function addCandidature($data){
-            $this->db->query('INSERT INTO candidature (job_id, user_id) VALUES (:job_id, :user_id)');
+            $this->db->query('INSERT INTO candidature (job_id, user_id,cv) VALUES (:job_id, :user_id, :cv)');
             $this->db->bind(':job_id', $data['job_id']);
             $this->db->bind(':user_id', $data['user_id']);
+            $this->db->bind(':cv', $data['cv']);
         
             if($this->db->execute()){
                 return true;
@@ -20,7 +21,7 @@
         }
 
         public function getCandidatures($id){
-            $this->db->query('SELECT u.user,u.name,u.family_name,u.email FROM candidature c INNER JOIN users u ON c.user_id = u.user_id WHERE c.job_id = :job_id');
+            $this->db->query('SELECT u.user,u.name,u.family_name,u.email,c.cv FROM candidature c INNER JOIN users u ON c.user_id = u.user_id WHERE c.job_id = :job_id');
             $this->db->bind(':job_id', $id);
         
             $row = $this->db->resultSet();

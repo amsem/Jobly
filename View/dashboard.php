@@ -44,6 +44,7 @@
                   <div class="temp">Email: <?php echo $candidature->email; ?></div>
                   <div class="temp">Name: <?php echo $candidature->name; ?></div>
                   <div class="temp">Family Name: <?php echo $candidature->family_name; ?></div>
+                  <div class="temp">CV: <?php echo '<a href="cv/'.$candidature->cv .'" >'.$candidature->cv ; ?></div>
                 </div>
               </div>
             </div>
