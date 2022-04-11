@@ -18,10 +18,9 @@
             if(in_array($fileActualExt, $allowed)){
                 if($fileError == 0){
                     if($fileSize < 5000000){
-                        $fileNameNew = uniqid('', true).".".$fileActualExt;
-                        $fileDestination = '../view/cv/'.$fileNameNew;
+                        $fileDestination = '../view/cv/'.$fileName;
                         move_uploaded_file($fileTmpName, $fileDestination);
-                        return $fileNameNew;
+                        return $fileName;
                     }else{
                         flash('file_error', 'Your file is too big');
                         return false;
