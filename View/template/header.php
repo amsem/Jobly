@@ -67,7 +67,7 @@
           <?php if(isset($_SESSION['id'])){
             if($_SESSION['role'] == "recruteur" ) echo '<button class="js-modal-trigger button btn is-medium" data-target="ourpostjob">post a job</button>'; 
 
-            echo '<a class="navbar-item" href="../Controller/Users.php?q=logout">logout</a>';
+            echo '<a class="navbar-item" href="../Controller/Candidats.php?q=logout">logout</a>';
           }else{ ?>
           <a class="navbar-item js-modal-trigger" data-target="modal-js-example"
             >register</a
@@ -81,8 +81,8 @@
           <a class="navbar-item" href="offres.php">offers</a>
           <?php
            if(isset($_SESSION['role'])){
-              if($_SESSION['role'] == "candidateur") echo '<div class="navbar-item" >'.$_SESSION['user'].'</div>';
-              else if($_SESSION['role'] == "recruteur") echo '<a class="navbar-item" href="dashboard.php">'.$_SESSION['user'].'</a>';
+              if($_SESSION['role'] == "candidateur") echo '<div class="navbar-item" >'.$_SESSION['name'].'</div>';
+              else if($_SESSION['role'] == "recruteur") echo '<a class="navbar-item" href="dashboard.php">'.$_SESSION['name'].'</a>';
            }
               else echo "<a class='navbar-item'>contact us</a>";
           ?>

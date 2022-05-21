@@ -7,7 +7,7 @@
         </style>
       </div>
       <div class="modal-content">
-        <form action="../Controller/Users.php" method="post">
+        <form action="../Controller/Candidats.php" method="post">
           <div class="box">
             <h2 class="title pl-1">login to your account</h2>
             <?php flash('login');?>
@@ -53,7 +53,7 @@
         </style>
       </div>
       <div class="modal-content">
-        <form action="../Controller/Users.php" method="post">
+        <form action="../Controller/Candidats.php" method="post">
           <div class="box">
             <h2 class="title pl-1">Create an account</h2>
             <?php flash('register');?>
@@ -70,12 +70,6 @@
               </div>
             </div>
             <div class="field">
-              <label class="label">Username</label>
-              <div class="control">
-                <input class="input" type="text" name="user" />
-              </div>
-            </div>
-            <div class="field">
               <label class="label">Email</label>
               <div class="control">
                 <input class="input" type="email" name="email" />
@@ -85,15 +79,6 @@
               <label class="label">Password</label>
               <div class="control">
                 <input class="input" type="password" name="password" />
-              </div>
-            </div>
-            <div class="field">
-              <div class="control">
-                <select name="type" id="type" class="input" style="background:rgba(0, 0, 0, 0.2);">
-                  <option value="" disabled selected>Choose your account type</option>
-                  <option value="recruteur">Recruteur</option>
-                  <option value="candidateur">Candidateur</option>
-                </select>
               </div>
             </div>
             <button class="modal-close is-large" aria-label="close"></button>
