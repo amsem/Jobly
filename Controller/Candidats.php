@@ -46,7 +46,8 @@ class Candidats extends Users{
         $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
 
         if($this->candidatModel->register($data)){
-            header("Location: ../view/index.php");
+            echo "registered";
+            // header("Location: ../view/index.php");
         }else{
             die("Something went wrong");
         }
@@ -68,7 +69,8 @@ class Candidats extends Users{
             $logged = $this->candidatModel->login($data['user'],$data['password']);
             if($logged){
                 $this->makeSession($logged,'candidateur');
-                header("Location: ../view/offres.php");  
+                echo "logged";
+                // header("Location: ../view/offres.php");  
                 }
             else{
                 flash("login", "Password Incorrect");
