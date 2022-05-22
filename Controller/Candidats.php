@@ -65,7 +65,7 @@ class Candidats extends Users{
             exit();
         }
         
-        if($this->candidatModel->checkIfUserExists($data['user'],$data['user'])){
+        if($this->candidatModel->checkIfUserExists($data['user'])){
             $logged = $this->candidatModel->login($data['user'],$data['password']);
             if($logged){
                 $this->makeSession($logged,'candidateur');

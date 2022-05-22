@@ -53,7 +53,7 @@ class Recruteurs extends Users{
 
         $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
 
-        if($this->candidatModel->register($data)){
+        if($this->recruteurModel->register($data)){
             echo "registered";
             // header("Location: ../view/index.php");
         }else{
@@ -73,10 +73,10 @@ class Recruteurs extends Users{
             exit();
         }
         
-        if($this->candidatModel->checkIfUserExists($data['user'],$data['user'])){
-            $logged = $this->candidatModel->login($data['user'],$data['password']);
+        if($this->recruteurModel->checkIfUserExists($data['user'])){
+            $logged = $this->recruteurModel->login($data['user'],$data['password']);
             if($logged){
-                $this->makeSession($logged,'candidateur');
+                $this->makeSession($logged,'recruteur');
                 echo "logged";
                 // header("Location: ../view/offres.php");  
                 }
