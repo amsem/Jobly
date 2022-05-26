@@ -39,11 +39,6 @@
 
         <!-- Modal -->
             <?php require "template/login_signup.php"; ?>
-
-            <div class="modal-content">
-
-            </div>
-        </div>  
         <!-- Search Start -->
         <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
             <div class="container">

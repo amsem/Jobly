@@ -1,8 +1,8 @@
 <?php
-    if(isset($_POST['searching'])){
+    if(isset($_GET['search'])){
         require "../Libraries/Search.php";
         $search = new Search;
-        $term = $_POST['search'];
+        $term = $_GET['search'];
         if (isset($term)){
             $results = $search->search($term);
             
@@ -13,6 +13,7 @@
         header("Location: index.php");
     }
     require "template/header.php";
+    require "template/login_signup.php";
 ?>
     <?php if(is_array($results)){ ?>
         <div class="container-xxl py-5">
@@ -36,7 +37,7 @@
                                         <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                             <div class="d-flex mb-3">
                                                 <a class="btn btn-light btn-square me-3" href=""><i class="far fa-heart text-primary"></i></a>
-                                                <a class="btn btn-primary" href="job-detail.html">Apply Now</a>
+                                                <a class="btn btn-primary" href="job-detail.php?id=<?= $result->job_id; ?>">Apply Now</a>
                                             </div>
                                             <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan, 2045</small>
                                         </div>
