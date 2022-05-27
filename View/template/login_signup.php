@@ -1,3 +1,9 @@
+<?php 
+    if(isset($_SESSION['erreur'])){
+        $erreur = $_SESSION['erreur'];
+        unset($_SESSION['erreur']);
+    }
+?>
 <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -41,7 +47,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">create an account</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Create account</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -87,3 +93,21 @@
             </div>
           </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.6/sweetalert2.all.min.js"></script>
+<?php
+
+    if(isset($erreur)){
+        echo "hi";
+        print "<script>
+        Swal.fire({
+        title : 'Erreur',
+        text : '$erreur',
+        icon : 'error',
+        confirmButtonText : 'Ok',
+        timer : 2000
+        })
+        </script>
+        ";
+        }
+    ?>
+

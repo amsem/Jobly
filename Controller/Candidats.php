@@ -20,25 +20,25 @@ class Candidats extends Users{
 
         if(empty($data['email']) || empty($data['family_name']) || 
         empty($data['password']) || empty($data['name'])){
-            flash("register", "Please fill out all inputs");
+            $_SESSION['erreur'] = "Please fill out all the inputs";
             header("Location: ../view/index.php");
             die();
         }
 
         if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
-            flash("register", "Invalid email");
+            $_SESSION['erreur'] = "Invalid Email";
             header("Location: ../view/index.php");
             die();
         }
 
         if(strlen($data['password']) < 8){
-            flash("register", "Invalid password");
+            $_SESSION['erreur'] = "Invalid password";
             header("Location: ../view/index.php");
             die();
         }
 
         if($this->candidatModel->checkIfUserExists($data['email'])){
-            flash("register", "Username or email already taken");
+            $_SESSION['erreur'] = "Email already taken";
             header("Location: ../view/index.php");
             die();
         }
@@ -60,9 +60,9 @@ class Candidats extends Users{
         ];
 
         if(empty($data['user']) || empty($data['password'])){
-            flash("login", "Please fill out all inputs");
+            $_SESSION['erreur'] = "Please fill out all the inputs";
             header("Location: ../view/index.php");
-            exit();
+            die();
         }
         
         if($this->candidatModel->checkIfUserExists($data['user'])){
@@ -73,12 +73,14 @@ class Candidats extends Users{
                 // header("Location: ../view/offres.php");  
                 }
             else{
-                flash("login", "Password Incorrect");
+                $_SESSION['erreur'] = "Password incorrect";
                 header("Location: ../view/index.php");
+                die();
             }
         }else{
-            flash("login", "No user found");
+            $_SESSION['erreur'] = "No user found";
             header("Location: ../view/index.php");
+            die();
         }
     }
         

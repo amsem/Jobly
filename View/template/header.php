@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  session_regenerate_id()
+  session_regenerate_id();
 ?>
 <!DOCTYPE html>
 <html lang="en">
