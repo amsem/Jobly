@@ -1,6 +1,5 @@
 <?php
-    require_once "../Model/Candidature.php";
-    require_once "../Libraries/flash.php";
+    require_once "c:/xampp/htdocs/dev.jobly.com/Model/Candidature.php";
     class Candidatures{
         private $candidatureModel;
         public function __construct(){
@@ -9,18 +8,21 @@
 
         public function addCandidature(){
             $data = [
+                'portfolio' => trim($_POST['portfolio']),
+                'coverletter' => trim($_POST['coverletter']),
                 'job_id' => trim($_SESSION['job_id']),
-                'user_id' => trim($_SESSION['id']),
+                'user_email' => trim($_SESSION['email'])    
             ];
+            $job = $_SESSION['job_id'];
+            unset($_SESSION['job_id']);
             if($this->candidatureModel->checkIfAlreadyApplied($data)){
-                flash("applied", "You are already applied");
-                unset($_SESSION['job_id']);
-                header("Location: ../view/offres.php");
+                $_SESSION['error'] = "You are already applied";
+                header("Location: ../view/job-detail.php?id=$job");
             }else if($this->candidatureModel->addCandidature($data)){
-                unset($_SESSION['job_id']);
-                header("Location: ../view/index.php");
+                $_SESSION['message'] = "Applied successfully";
+                header("Location: ../view/job-detail.php?id=$job");
             }else{
-                header("Location: ../view/offres.php");
+                header("Location: ../view/job-detail.php?id=$job");
                 die();
             }
         }
@@ -35,10 +37,19 @@
             }
         }
 
+        public function getMyCandidatures($email){
+            $candidatures = $this->candidatureModel->getMyCandidatures($email);
+            if($candidatures){
+                return $candidatures;
+            }else{
+                $_SESSION['error'] = "There isn't any candidate";
+                return Array();
+            }
+        }
+
     }
     $init = new Candidatures;
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['Apply'])) $init->addCandidature();
-
     }
 ?>

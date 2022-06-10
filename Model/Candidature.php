@@ -1,5 +1,5 @@
 <?php 
-    require_once "../Libraries/Database.php";
+    require_once "c:/xampp/htdocs/dev.jobly.com/Libraries/Database.php";
 
     class Candidature{
         private $db;
@@ -8,10 +8,12 @@
         }
 
         public function addCandidature($data){
-            $this->db->query('INSERT INTO candidature (job_id, user_id,cv) VALUES (:job_id, :user_id, :cv)');
+            print_r(($data));
+            $this->db->query('INSERT INTO candidature (portfolio,coverletter,job_id, user_email) VALUES (:portfolio,:coverletter,:job_id, :user_email)');
+            $this->db->bind(':portfolio', $data['portfolio']);
+            $this->db->bind(':coverletter', $data['coverletter']);
             $this->db->bind(':job_id', $data['job_id']);
-            $this->db->bind(':user_id', $data['user_id']);
-            $this->db->bind(':cv', $data['cv']);
+            $this->db->bind(':user_email', $data['user_email']);
         
             if($this->db->execute()){
                 return true;
@@ -32,10 +34,22 @@
             }
         }
 
+        public function getMyCandidatures($email){
+            $this->db->query('SELECT  etat,date FROM candidature WHERE user_email = :user_email');
+            $this->db->bind(':user_email', $email);
+        
+            $row = $this->db->resultSet();
+            if($this->db->rowCount() > 0){
+                return $row;
+            }else{
+                return false;
+            }
+        }
+
         public function checkIfAlreadyApplied($data){
-            $this->db->query('SELECT * FROM candidature WHERE job_id = :jobID AND user_id = :userID');
+            $this->db->query('SELECT * FROM candidature WHERE job_id = :jobID AND user_email = :userEmail');
             $this->db->bind(':jobID',$data['job_id']);
-            $this->db->bind(':userID',$data['user_id']);
+            $this->db->bind(':userEmail',$data['user_email']);
             $this->db->execute();
             if($this->db->rowCount() > 0){
                 return true;

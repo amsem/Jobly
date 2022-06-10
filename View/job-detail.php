@@ -7,7 +7,7 @@
     }else{
         header("Location: job-list.php");
     }
-    require "template/login_signup.php";
+    if(!isset($_SESSION['email'])) require "template/login_signup.php";
 ?>
     <div class="container-xxl bg-white p-0">
         <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -30,17 +30,28 @@
                         </div>
         
                         <div>
+                        <?php
+                            if (isset($_SESSION['message']) ){
+                                print'<div class="alert alert-success">'.$_SESSION['message'].'</div>';
+                                unset($_SESSION['message']);
+                            }
+                            if (isset($_SESSION['error']) ){
+                                print'<div class="alert alert-danger">'.$_SESSION['error'].'</div>';
+                                unset($_SESSION['error']);
+                            }
+                        ?>
                             <h4 class="mb-4">Apply For The Job</h4>
-                            <form>
+                            <form action="../Controller/Candidatures.php" method="POST">
+                                <?php $_SESSION['job_id'] = $_GET['id']; ?>
                                 <div class="row g-3">
                                     <div class="col-12 col-sm-6">
-                                        <input type="text" class="form-control" placeholder="Portfolio Website">
+                                        <input type="text" class="form-control" placeholder="Portfolio Website" name="portfolio">
                                     </div>
                                     <div class="col-12 col-sm-6">
-                                        <textarea class="form-control" rows="5" placeholder="Coverletter"></textarea>
+                                        <textarea class="form-control" rows="5" placeholder="Coverletter" name="coverletter"></textarea>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100" type="submit">Apply Now</button>
+                                        <button class="btn btn-primary w-100" type="submit" name="Apply">Apply Now</button>
                                     </div>
                                 </div>
                             </form>

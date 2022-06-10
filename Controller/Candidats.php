@@ -1,7 +1,6 @@
 <?php
 
 require_once "../Model/Candidat.php";
-require_once "../Libraries/flash.php";
 require "Users.php";
 
 class Candidats extends Users{
@@ -181,9 +180,9 @@ class Candidats extends Users{
             die();
         }
     }
-        
 
         
+     
     }
 
     $init = new Candidats;
