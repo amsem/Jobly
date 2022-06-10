@@ -43,6 +43,34 @@
             }
         }
 
+        public function modifyInformations($email,$data){
+            $this->db->query('UPDATE candidat SET name = :name,family_name = :family_name,email = :email,date_de_naissance = :date,cv = :cv WHERE email = :emailCond');
+            $this->db->bind(':name', $data['name']);
+            $this->db->bind(':family_name', $data['family_name']);
+            $this->db->bind(':email', $data['email']);
+            $this->db->bind(':date', $data['date']);
+            $this->db->bind(':cv', $data['cv']);
+            $this->db->bind(':emailCond', $email);
+        
+            if($this->db->execute()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        public function newPass($email,$pass){
+            $this->db->query('UPDATE candidat SET password = :pass WHERE email = :emailCond');
+            $this->db->bind(':pass', $pass);
+            $this->db->bind(':emailCond', $email);
+        
+            if($this->db->execute()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
     }
 
 ?>

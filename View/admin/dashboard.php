@@ -10,11 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.98.0">
     <title>Espace Admin ! </title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <meta name="theme-color" content="#712cf9">
     <link href="../css/dashboard.css" rel="stylesheet">
