@@ -148,8 +148,6 @@
         opacity: 1;
     }
 }
-
-
 /*** Header ***/
 .header-carousel .container,
 .page-header .container {
@@ -321,8 +319,50 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+/*login and signup */
+.fieldlogin{
+  display: flex;
+  flex-direction: row;
+}
+.btn1{
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.box a {
+  color: black;
+  font-weight: bolder;
+}
+.box input {
+  font-size: 1.25rem;
+  border-color: grey;
+}
+.box .title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+}
 
+.title {
+  font: Poppins;
+  font-size: 2rem;
+}
+.box .field{
+    margin-top: 20px;
+}
+/**modal ***/
+.modal-dialog{
+    overflow-y: initial;
+}
 
+.modal-body{
+    max-height: 80vh;
+    overflow-y: auto;
+}
+/*** post the jeob ***/
+.postjob{
+    max-width: 80%!important;
+}
 /*** Footer ***/
 .footer .btn.btn-social {
     margin-right: 5px;
