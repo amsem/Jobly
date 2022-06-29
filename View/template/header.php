@@ -34,6 +34,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/modal.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
