@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "../Model/Recruteur.php";
 require_once "../Libraries/flash.php";
 require "Users.php";
@@ -12,11 +12,12 @@ class Recruteurs extends Users{
 
     public function register(){
         $data = [
-            'nom' => trim($_POST['nom']),
-            'prenom' => trim($_POST['prenom']),
-            'entreprise' => trim($_POST['entreprise']),
+            'nom' => trim($_POST['name']),
+            'prenom' => trim($_POST['family_name']),
+            'entreprise' => trim($_POST['company_name']),
             'email' => trim($_POST['email']),
-            'tel' => trim($_POST['tel'])
+            'tel' => trim($_POST['tel']),
+            'password' => trim($_POST['password'])
 
         ];
 
@@ -54,8 +55,7 @@ class Recruteurs extends Users{
         $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
 
         if($this->recruteurModel->register($data)){
-            echo "registered";
-            // header("Location: ../view/index.php");
+            header("Location: ../view/index.php");
         }else{
             die("Something went wrong");
         }
@@ -72,8 +72,8 @@ class Recruteurs extends Users{
             header("Location: ../view/index.php");
             exit();
         }
-        
-        if($this->recruteurModel->checkIfUserExists($data['user'])){
+        $user = $this->recruteurModel->checkIfUserExists($data['user']);
+        if($user->valider == 1){
             $logged = $this->recruteurModel->login($data['user'],$data['password']);
             if($logged){
                 $this->makeSession($logged,'recruteur');

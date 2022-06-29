@@ -1,5 +1,4 @@
 <?php
-// session_start();
 
 require_once "C:/xampp/htdocs/dev.jobly.com/Model/Admin.php";
 

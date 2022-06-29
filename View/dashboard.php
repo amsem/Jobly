@@ -1,9 +1,9 @@
  <?php
- //   session_start();
- //   session_regenerate_id();
-   // if($_SESSION['role'] != 'recruteur' && $_SESSION['role'] != 'candidateur' ){
-     //   header("Location: index.php");
-    //}
+   session_start();
+   session_regenerate_id();
+   if($_SESSION['role'] != 'recruteur' && $_SESSION['role'] != 'candidateur' ){
+       header("Location: index.php");
+    }
 ?>
 <!doctype html>
 <html lang="en">

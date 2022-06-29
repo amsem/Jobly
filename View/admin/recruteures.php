@@ -6,7 +6,7 @@
         header("Location: ../index.php");
     }
     $adminObject = new Adminn;
-    $candidats = $adminObject->getAllCan();
+    $recruteures = $adminObject->getAllRec();
 ?>
 <!doctype html>
 <html lang="en">
@@ -82,24 +82,28 @@
                   <th scope="col">Nom</th>
                   <th scope="col">prenom</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Date de naissance</th>
+                  <th scope="col">Company name</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody> 
                 <?php
                   $i=0 ;
-                  foreach ($candidats as $candidat ) {
+                  foreach ($recruteures as $recruteur ) {
                     $i++ ;
                     print ' 
                       <tr>
                         <th scope="row">'.$i.'</th>
-                        <td>'.$candidat->name.'</td>
-                        <td> '.$candidat->family_name.' </td>
-                        <td> '.$candidat->email.' </td>
-                        <td> '.$candidat->date_de_naissance.' </td>
-                        <td> 
-                          <a onClick="return popUpDeleteCategory()" href="../../Controller/Adminn.php?id='.$candidat->id.'" class="btn btn-danger">Supprimer</a>
+                        <td>'.$recruteur->name.'</td>
+                        <td> '.$recruteur->family_name.' </td>
+                        <td> '.$recruteur->email.' </td>
+                        <td> '.$recruteur->company_name.' </td>
+                        <td>';
+                        if($recruteur->valider != 1){
+                          echo '<a href="../../Controller/Adminn.php?validate='.$recruteur->id.'" class="btn btn-success">Valider</a> ';
+                        }
+                        
+                        echo '<a onClick="return popUpDeleteCategory()" href="../../Controller/Adminn.php?id='.$recruteur->id.'" class="btn btn-danger">Supprimer</a>
                         </td>
                       </tr>';
                   } 

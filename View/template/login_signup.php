@@ -39,6 +39,10 @@
                     <div>
                     <label class="label label2">Pas de compte? <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal2">creez un!</button>
                 </label>
+                <label>                    
+                    <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal5">connectez tant que recruteur</button>
+
+                </label>   
                     </div>
                 </div>
               </form>
@@ -46,6 +50,53 @@
             </div>
           </div>
 </div>
+
+<div class="modal fade" id="Modal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title pl-3" id="exampleModalLabel">connectez a votre compte</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+              <form action="../Controller/Recruteurs.php" method="post">
+                <div class="box">
+                    <div class="field">
+                        <label class="form-label">Email</label>
+                        <div class="control">
+                            <input class="form-control" type="email" name="user">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="form-label">mot de passe</label>
+                        <div class="control">
+                            <input class="form-control" type="password" name="password">
+                        </div>
+                        <label class="form-label"><button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal4">mot de passe oublie?</button></label>
+                    </div>
+                    <div class="field  fieldlogin gap-2  is-grouped">
+                        <div class="control">
+                            <button class="btn btn1 btn-secondary" name="login">login</button>
+                        </div>
+                        <div class="control">
+                            <button class="btn btn1 btn-secondary">annuler</button>
+                        </div>
+                    </div>
+                    <div>
+                    <label class="label label2">Pas de compte? <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal2">creez un!</button>
+                </label>
+                <label>                    
+                    <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal1">connectez tant que candidat</button>
+
+                </label>   
+                    </div>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+</div>
+
 <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -72,7 +123,7 @@
             <div class="field">
                 <label class="form-label">Nom d'entreprise</label>
                 <div class="control">
-                    <input class="form-control" type="text" name="nom d'entreprise">
+                    <input class="form-control" type="text" name="company_name">
                 </div>
             </div>
             <div class="field">
@@ -110,6 +161,7 @@
                 </label>                    
             </div>
         </div>
+      </form>
       </div>
     </div>
   </div>
@@ -166,6 +218,7 @@
                 </label>        
             </div>
         </div>
+      </form>
       </div>
     </div>
   </div>

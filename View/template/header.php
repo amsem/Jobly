@@ -59,8 +59,8 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
 
-                    <form class="input-group rounded pt-4 pb-4"action='search.php' method='get'>
-                        <input type="search" class="form-control rounded" placeholder="rechercher des offres" aria-label="Search" aria-describedby="search-addon" />
+                    <form class="input-group rounded pt-4 pb-4"action='search.php' method='post'>
+                        <input type="search" class="form-control rounded" name="search" placeholder="rechercher des offres" aria-label="Search" aria-describedby="search-addon" />
                         <span class="input-group-text border-0" id="search-addon">
                             <i class="fas fa-search"></i>
                         </span>
@@ -75,7 +75,12 @@
                         login
                     </a>
                     <a href="contact.php" class="nav-item nav-link">Contact</a>
-                    <a href="../View/jobpost.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+                    <?php
+                        if(!isset($_SESSION['role']) || $_SESSION['role'] == "recruteur"){
+                            echo '<a href="../View/jobpost.php" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>';
+                        }
+                    ?>
+                   
                 </div>
             </div>
         </nav>
