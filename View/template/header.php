@@ -35,6 +35,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/modal.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/message.css">
 </head>
 
 <body>
