@@ -1,8 +1,8 @@
 <?php
-    if(isset($_GET['search'])){
+    if(isset($_POST['search'])){
         require "../Libraries/Search.php";
         $search = new Search;
-        $term = $_GET['search'];
+        $term = $_POST['search'];
         if (isset($term)){
             $results = $search->search($term);
             

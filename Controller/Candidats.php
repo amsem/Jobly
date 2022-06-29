@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "../Model/Candidat.php";
 require "Users.php";
 
@@ -96,15 +96,15 @@ class Candidats extends Users{
                     move_uploaded_file($fileTmpName, $fileDestination);
                     return $fileName;
                 }else{
-                    flash('file_error', 'Your file is too big');
+                    // flash('file_error', 'Your file is too big');
                     return false;
                 }
             }else{
-                flash('file_error', 'There was an error uploading your file');
+                // flash('file_error', 'There was an error uploading your file');
                 return false;
             }
         }else{
-            flash('file_error', 'You cannot upload files of this type');
+            // flash('file_error', 'You cannot upload files of this type');
             return false;
         }
     }
@@ -165,7 +165,6 @@ class Candidats extends Users{
             if($data['nouveau'] == $data['confirm']){
                 $password = password_hash($data['nouveau'],PASSWORD_DEFAULT);
                 if($this->candidatModel->newPass($_SESSION['email'],$password)){
-                    $_SESSION['email'] = $data['email'];
                     $_SESSION['message'] = "Les informations ont ete modifier avec succes";
                     header("Location: ../view/candidat/modifier.php");
                 }

@@ -19,13 +19,13 @@
         }
 
         public function register($data){
-            $this->db->query('INSERT INTO recruteur (nom, prenom, entreprise, email, tel, valider) VALUES (:nom, :prenom, :entreprise, :email, :tel, :valider)');
+            $this->db->query('INSERT INTO recruteur (name, family_name, company_name, email, tel, password) VALUES (:nom, :prenom, :entreprise, :email, :tel, :password)');
             $this->db->bind(':nom', $data['nom']);
             $this->db->bind(':prenom', $data['prenom']);
             $this->db->bind(':entreprise', $data['entreprise']);
             $this->db->bind(':email', $data['email']);
             $this->db->bind(':tel', $data['tel']);
-            $this->db->bind(':valider', 0);
+            $this->db->bind(':password', $data['password']);
 
             
             if($this->db->execute()){

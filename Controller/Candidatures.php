@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once "c:/xampp/htdocs/dev.jobly.com/Model/Candidature.php";
     class Candidatures{
         private $candidatureModel;
