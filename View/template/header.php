@@ -30,11 +30,14 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/modal.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
+     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/modal.css" rel="stylesheet">
+    <link href="./css/dashboard.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/message.css">
 </head>
 
