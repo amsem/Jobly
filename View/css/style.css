@@ -67,7 +67,11 @@
     font-weight: normal;
     border-radius: 2px;
 }
+.input-group{
+    align-self: center;
+    max-height: 60px;
 
+}
 
 /*** Navbar ***/
 .navbar .dropdown-toggle::after {
@@ -111,6 +115,15 @@
     .navbar-light .navbar-nav {
         border-top: 1px solid #EEEEEE;
     }
+    .navbar-nav{
+        padding-left: 40px;
+    }
+    .input-group{
+    align-self: flex-start;
+    max-height: 60px;
+    max-width: 400px;
+
+    }
 }
 
 .navbar-light .navbar-brand,
@@ -147,6 +160,14 @@
         transition: .5s;
         opacity: 1;
     }
+    .nav-item{
+    padding: 20px 0px 0px 30px !important;
+    }
+    .navbar-collapse{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
 }
 /*** Header ***/
 .header-carousel .container,

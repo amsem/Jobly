@@ -54,34 +54,34 @@
 
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a href="index.php" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
-                <h1 class="m-0 text-primary">Jobly</h1>
+            <a href="index.php" class="navbar-brand d-flex align-items-center text-center ">
+                <h1 class="text-primary">Jobly</h1>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto  p-lg-0">
+                <div class="navbar-nav ">
 
-                    <form class="input-group rounded pt-4 pb-4"action='search.php' method='post'>
+                    <form class="input-group rounded  "action='search.php' method='post'>
                         <input type="search" class="form-control rounded" name="search" placeholder="rechercher des offres" aria-label="Search" aria-describedby="search-addon" />
                         <span class="input-group-text border-0" id="search-addon">
                             <i class="fas fa-search"></i>
                         </span>
                     </form>
 
-                    <a href="testimonial.php" class="nav-item nav-link ">About Us</a>
-                    <a class="nav-item nav-link" role="button" data-bs-toggle="modal" data-bs-target="#Modal2">
+                    <a href="testimonial.php" class="nav-item nav-link pr-4">About Us</a>
+                    <a class="nav-item nav-link " role="button" data-bs-toggle="modal" data-bs-target="#Modal2">
                         S'inscrire
                     </a>
                    
-                   <a class="nav-item nav-link" role="button" data-bs-toggle="modal" data-bs-target="#Modal1">
+                   <a class="nav-item nav-link " role="button" data-bs-toggle="modal" data-bs-target="#Modal1">
                         Se Connecter
                     </a>
-                    <a href="contact.php" class="nav-item nav-link">Nous Contacter</a>
+                    <a href="contact.php" class="nav-item nav-link ">Nous Contacter</a>
                     <?php
                         if(!isset($_SESSION['role']) || $_SESSION['role'] == "recruteur"){
-                            echo '<a href="../View/jobpost.php" class="btn btn-primary rounded-0 px-lg-5 d-none d-lg-block">Publier Une Offre</a>';
+                            echo '<a href="../View/jobpost.php" class="btn btn-primary rounded-0 px-lg-5 pb-0 mb-0  d-none d-lg-block">Publier Une Offre</a>';
                         }
                     ?>
                    

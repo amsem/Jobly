@@ -16,7 +16,13 @@
             </div>
             <div class="text mt-3"> 
               <span>Eleanor Pena is a creator of minimalistic x bold graphics and digital artwork.<br><br> Artist/ Creative Director by Day #NFT minting@ with FND night. </span> 
-            </div> 
+            </div>
+            <?php
+                if(!isset($_SESSION['role']) || $_SESSION['role'] == "recruteur"){
+                    echo '<span class="companyname mt-3">helloworld.org</span> 
+                    <span class="tel mt-3">2137946578</span> ';
+                }
+            ?> 
             <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> 
               <span><i class="fa fa-twitter"></i></span>
               <span><i class="fa fa-facebook-f"></i></span> 
