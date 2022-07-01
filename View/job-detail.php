@@ -18,7 +18,7 @@
                             <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-2.jpg" alt="" style="width: 80px; height: 80px;">
                             <div class="text-start ps-4">
                                 <h3 class="mb-3"><?= $job_det->title; ?></h3>
-                                <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>New York, USA</span>
+                                <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i><?= $job_det->place; ?></span>
                                 <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i><?= $job_det->type; ?></span>
                                 <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i><?= $job_det->salary; ?> DZD</span>
                             </div>
@@ -61,10 +61,10 @@
                     <div class="col-lg-4">
                         <div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
                             <h4 class="mb-4">Job Summery</h4>
-                            <p><i class="fa fa-angle-right text-primary me-2"></i>Published On: 01 Jan, 2045</p>
+                            <p><i class="fa fa-angle-right text-primary me-2"></i>Published On: <?= $job_det->date; ?></p>
                             <p><i class="fa fa-angle-right text-primary me-2"></i>Job Nature: <?= $job_det->type; ?></p>
                             <p><i class="fa fa-angle-right text-primary me-2"></i>Salary: <?= $job_det->salary; ?> DZD</p>
-                            <p><i class="fa fa-angle-right text-primary me-2"></i>Location: New York, USA</p>
+                            <p><i class="fa fa-angle-right text-primary me-2"></i>Location: <?= $job_det->place; ?></p>
                         </div>
                     </div>
                 </div>

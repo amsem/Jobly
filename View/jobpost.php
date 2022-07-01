@@ -1,10 +1,10 @@
 <?php 
   require "template/header.php";
-  if(!isset($_SESSION['role'])){
-    header("Location: index.php");
-  }else if($_SESSION['role'] != "recruteur"){
-    header("Location: index.php");
-  }
+  // if(!isset($_SESSION['role'])){
+  //   header("Location: index.php");
+  // }else if($_SESSION['role'] != "recruteur"){
+  //   header("Location: index.php");
+  // }
 ?>
 <div class="postjob">
   <style type="text/css">
@@ -34,6 +34,15 @@
     <label for="exampleFormControlInput1" class="form-label">Type</label>
     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
       <option selected>selectionner le type de contrat</option>
+      <option value="1">part-time</option>
+      <option value="2">cdd</option>
+      <option value="3">Three</option>
+  </select>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Categorie</label>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      <option selected>selectionner la categorie d'offre</option>
       <option value="1">part-time</option>
       <option value="2">cdd</option>
       <option value="3">Three</option>
