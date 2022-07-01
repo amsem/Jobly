@@ -121,6 +121,12 @@
                 </div>
             </div>
             <div class="field">
+                <label class="form-label">Date de Naissance</label>
+                <div class="control">
+                    <input class="form-control" type="text" name="birthday">
+                </div>
+            </div>
+            <div class="field">
                 <label class="form-label">Nom d'entreprise</label>
                 <div class="control">
                     <input class="form-control" type="text" name="company_name">
@@ -187,6 +193,12 @@
                 <label class="form-label">Prenom</label>
                 <div class="control">
                     <input class="form-control" type="text" name="family_name">
+                </div>
+            </div>
+            <div class="field">
+                <label class="form-label">Date de Naissance</label>
+                <div class="control">
+                    <input class="form-control" type="text" name="birthday">
                 </div>
             </div>
             <div class="field">
