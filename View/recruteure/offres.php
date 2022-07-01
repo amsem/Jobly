@@ -1,12 +1,14 @@
 <?php 
-    require "../template/header.php"; ?>
+    require "../template/header.php"; 
+?>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Jobs Start -->
 <div class="container-xxl py-5">
     <div class="container">
-        <h2 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">candidatures</h2>
+        <h2 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">offres</h2>
+        <button class="btn btn-secondary">creer des offres</button>            
         <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
@@ -15,7 +17,7 @@
                             <div class="col-sm-12 col-md-8 d-flex align-items-center"  data-bs-toggle="modal" data-bs-target="#Modal1">
                                 <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
                                 <div class="text-start ps-4">
-                                    <h5 class="mb-3 ">candidate name</h5>
+                                    <h5 class="mb-3 ">titre d'offre</h5>
                                     
                                 </div>
                             </div>
@@ -29,16 +31,13 @@
                                                 }
                                 </style>  
                                 <div class="dropdown-menu" >
-                                    <a class="dropdown-item" href="">mettre en review</a>
+                                    <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Modal1">voir details</a>
                                     <a class="dropdown-item" href="">supprimer</a>
-                                    <a class="dropdown-item" href="">programmer une intervue</a>
-                                    <a class="dropdown-item" href="">hired</a> 
-                                    <a class="dropdown-item" href="">messager</a> 
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5" href="">voir plus de candidatures</a>
+                    <a class="btn btn-primary py-3 px-5" href="">voir plus d'offres'</a>
                 </div>
             </div>
         </div>
@@ -48,23 +47,52 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="col-sm-12 col-md-8 d-flex align-items-center" >
-                    <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
-                    <div class="text-start ps-4">
-                    <h5 class="mb-3 ">candidate name</h5>
-                                
-                    </div>
+
+                <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+                <div class="text-start ps-4">
+                <h5 class="mb-3 ">titre d'offre</h5>
+                            
                 </div>
+            
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h4 class=" ml-4 mb-3">nom de poste</h4>
-                <button class="btn btn-dark mb-3 mt-3">voir profil</button>
-                <button class="btn btn-dark mb-3 mt-3">voir le CV</button>
-                <button class="btn btn-dark mb-3 mt-3">lettre de motivation</button>
-              </div>
+                <div class="postjob">
+                  <style type="text/css">
+                    .postjob{
+                      max-width: 80vw;
+                      margin: auto;
+                      margin-top: 70px;
+                    }
+                    .titlejob{
+                      margin-bottom: 40px;
+                    }
+                  </style>
+                  <h4 class="titlejob">titre d'offre de travail</h4>
+
+                  <div class="mb-3">
+                    <p>description</p>
+                  </div>
+                  <div class="mb-3">
+                    <p>paie</p>
+                  </div>
+                  <div class="mb-3">
+                    <p>type</p>
+                  </div>
+                  <div class="mb-3">
+                    <p>lieu</p>
+                  </div>  
+
+                </div>
+                <button class="btn btn-secondary">
+                    modifier
+                </button>
+                <button class="btn btn-dark">
+                    annuler
+                </button>
+            </div>
+
         </div>
     </div>
-</div>
-        <!-- Jobs End -->
+
 <?php require "../template/footer.php"; ?>

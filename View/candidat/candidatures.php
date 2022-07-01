@@ -1,109 +1,46 @@
-<?php
-    session_start();
-    session_regenerate_id();
-    require "../../Controller/Candidatures.php";
-    if($_SESSION['role'] != 'candidateur' ){
-        header("Location: ../index.php");
-    }
-    $candidatObject = new Candidatures;
-    $candidatures = $candidatObject->getMyCandidatures($_SESSION['email']);
-?>
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Espace Admin ! </title>
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <meta name="theme-color" content="#712cf9">
-    <link href="../css/dashboard.css" rel="stylesheet">
-  </head>
-  <body>
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">JobLy</a>
-      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
-      <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="../../Controller/Candidats.php?q=logout">Deconnexion</a>
+<?php 
+    require "../template/header.php"; ?>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Jobs Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">candidatures</h2>
+        <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="job-item p-4 mb-4">
+                        <div class="row g-4">
+                            <div class="col-sm-12 col-md-8 d-flex align-items-center" >
+                                <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+                                <div class="text-start ps-4">
+                                    <h5 class="mb-3 ">titre d'offre</h5>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                <button type="button" class="btn  btn-secondary dropdown-toggle me-3" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>  
+                                <style type="text/css">
+                                            .dropdown-toggle::after {
+                                                content: none;
+                                                }
+                                </style>  
+                                <div class="dropdown-menu" >
+                                    <a class="dropdown-item" href="">voir status</a>
+                                    <a class="dropdown-item" href="">supprimer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5" href="">voir plus de candidatures</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </header>
-    <div class="container-fluid">
-      <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-          <div class="position-sticky pt-3">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="../dashboard.php">
-                  <span data-feather="home" class="align-text-bottom"></span>
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="candidatures.php">
-                  <span data-feather="file" class="align-text-bottom"></span>
-                  Mes candidatures
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="profile.php">
-                  <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                  Mon profile
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                  Modifier mot de passe
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Liste des candidateures</h1>
-          </div>
-          <div>
-            <?php
-            if (isset($_SESSION['error']) ){
-              print'<div class="alert alert-danger">'.$_SESSION['error'].'</div>';
-              unset($_SESSION['error']);
-              }
-            ?>
-            <table class="table">
-              <thead class="table-light">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Titre d'emplois</th>
-                  <th scope="col">Nom d'entreprise</th>
-                  <th scope="col">Etat</th>
-                  <th scope="col">Date de candidature</th>
-                </tr>
-              </thead>
-              <tbody> 
-                <?php
-                  $i=0 ;
-                  foreach ($candidatures as $candidature ) {
-                    $i++ ;
-                    print ' 
-                      <tr>
-                        <th scope="row">'.$i.'</th>
-                        <td> test </td>
-                        <td> test </td>
-                        <td> '.$candidature->etat.' </td>
-                        <td> '.$candidature->date.' </td>
-                      </tr>';
-                  } 
-                ?>
-              </tbody>
-            </table>  
-          </div>  
-        </main> 
-      </div>
     </div>
-  </body>
-</html>
+</div>
+
+        <!-- Jobs End -->
+<?php require "../template/footer.php"; ?>

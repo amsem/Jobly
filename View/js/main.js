@@ -133,3 +133,10 @@ const myInput = document.getElementById('myInput')
 myModal.addEventListener('shown.bs.modal', () => {
   myInput.focus()
 })
+
+
+$(document).ready(function(){
+    $('button').click(function(){
+        $('.alert').show()
+    }) 
+});
