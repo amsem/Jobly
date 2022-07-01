@@ -24,7 +24,7 @@
         }
 
         public function getAllJobs(){
-            $this->db->query('SELECT * FROM jobs');
+            $this->db->query('SELECT * FROM jobs ORDER BY job_id DESC');
             $row = $this->db->resultSet();
             if($this->db->rowCount() > 0){
                 return $row;
@@ -45,7 +45,7 @@
         }
         
         public function getAllJobsPostedByUser($id){
-            $this->db->query('SELECT * FROM jobs WHERE user_id = :id');
+            $this->db->query('SELECT * FROM jobs WHERE user_id = :id ORDER BY job_id DESC');
             $this->db->bind(':id',$id);
             $row = $this->db->resultSet();
             if($this->db->rowCount() > 0){

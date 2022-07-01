@@ -38,7 +38,7 @@
             }
         }
 
-        public function getMyCandidatures($email){
+        public function getUserCandidatures($email){
             $candidatures = $this->candidatureModel->getMyCandidatures($email);
             if($candidatures){
                 return $candidatures;

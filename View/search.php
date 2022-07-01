@@ -1,7 +1,7 @@
 <?php
+    require "../Libraries/Search.php";
+    $search = new Search;
     if(isset($_POST['search'])){
-        require "../Libraries/Search.php";
-        $search = new Search;
         $term = $_POST['search'];
         if (isset($term)){
             $results = $search->search($term);
@@ -9,6 +9,10 @@
         }else{
             header("Location: index.php");
         }
+    }else if(isset($_GET['type'])){
+        $results = $search->searchByType($_GET['type']);
+    }else if(isset($_GET['cat'])){
+        $results = $search->searchByCategory($_GET['cat']);
     }else{
         header("Location: index.php");
     }

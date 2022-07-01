@@ -18,12 +18,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
+                            <a class="d-flex align-items-center text-start mx-3 pb-3" href="search.php?type=full time">
                                 <h6 class="mt-n1 mb-0">Full Time</h6>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" href="search.php?type=part time">
                                 <h6 class="mt-n1 mb-0">Part Time</h6>
                             </a>
                         </li>
