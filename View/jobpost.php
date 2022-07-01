@@ -1,19 +1,10 @@
 <?php 
-<<<<<<< HEAD
   require "template/header.php";
-  // if(!isset($_SESSION['role'])){
-  //   header("Location: index.php");
-  // }else if($_SESSION['role'] != "recruteur"){
-  //   header("Location: index.php");
-  // }
-=======
- require "template/header.php";
-  //if(!isset($_SESSION['role'])){
-    //header("Location: index.php");
-  //}else if($_SESSION['role'] != "recruteur"){
-    //header("Location: index.php");
-  //}
->>>>>>> 42a6628b1345b0cb04d50dd3d4066aebef54c4c8
+  if(!isset($_SESSION['role'])){
+    header("Location: index.php");
+  }else if($_SESSION['role'] != "recruteur"){
+    header("Location: index.php");
+  }
 ?>
 <div class="postjob">
   <style type="text/css">
