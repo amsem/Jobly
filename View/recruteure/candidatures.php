@@ -16,7 +16,7 @@
         <!-- Jobs Start -->
 <div class="container-xxl py-5">
     <div class="container">
-        <h2 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">candidatures</h2>
+        <h2 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Candidatures</h2>
         <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
@@ -43,11 +43,12 @@
                                 </style>  
                                 <div class="dropdown-menu" >
                                     <?php $_SESSION['user_email'] = $can->email; ?>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=on review">mettre en review</a>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=failed">failed</a>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=on interview">programmer une intervue</a>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=hired">hired</a> 
-                                    <a class="dropdown-item" href="">messager</a> 
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=on review">Mettre En Review</a>
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=failed">Failed</a>
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=on interview">Programmer une intervue</a>
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=hired">Hired</a> 
+                                    <a class="dropdown-item" href="">Messager</a> 
+                                    <a class="dropdown-item" href="">Voir Le Profile</a> 
                                 </div>
                             </div>
                         </div>
@@ -69,14 +70,14 @@
                                     <h4 class=" ml-4 mb-3"><?php echo $can->title; ?></h4>
                                     <button class="btn btn-dark mb-3 mt-3">voir profil</button>
                                     <a class="btn btn-dark mb-3 mt-3" href="../cv/<?php echo $can->cv ;?> ">voir le CV</a>
-                                    <button class="btn btn-dark mb-3 mt-3">lettre de motivation</button>
+                                    <button class="btn btn-dark mb-3 mt-3">Lettre De Motivation</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <?php $i = $i + 1;
                 } ?>
-                    <a class="btn btn-primary py-3 px-5" href="">voir plus de candidatures</a>
+                    <a class="btn btn-primary py-3 px-5" href="">Voir Plus De Candidatures</a>
                 </div>
             </div>
         </div>

@@ -46,8 +46,8 @@
     <label for="exampleFormControlInput1" class="form-label">Type</label>
     <select name="type" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
       <option  selected>selectionner le type de contrat</option>
-      <option value="part time">part-time</option>
-      <option value="full time">full-time</option>
+      <option value="part time">temps partiel</option>
+      <option value="full time">temps plein</option>
   </select>
   </div>
   <div class="mb-3">
