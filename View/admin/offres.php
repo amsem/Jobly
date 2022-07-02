@@ -97,7 +97,7 @@
                         <td>'.$offer->title.'</td>
                         <td> '.$offer->job_desc.' </td>
                         <td> '.$offer->date.' </td>
-                        <td> '.$offer->user_id.' </td>
+                        <td> '.$offer->user_email.' </td>
                         <td> 
                           <a onClick="return popUpDeleteCategory()" href="../../Controller/Adminn.php?offer='.$offer->job_id.'" class="btn btn-danger">Supprimer</a>
                         </td>

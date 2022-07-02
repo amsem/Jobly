@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once "../Model/Recruteur.php";
-require_once "../Libraries/flash.php";
 require "Users.php";
 
 class Recruteurs extends Users{
@@ -23,31 +22,31 @@ class Recruteurs extends Users{
 
         if(empty($data['nom']) || empty($data['prenom']) || 
         empty($data['entreprise']) || empty($data['email']) || empty($data['tel'])){
-            flash("register", "Please fill out all inputs");
+            // flash("register", "Please fill out all inputs");
             header("Location: ../view/index.php");
             die();
         }
 
         if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
-            flash("register", "Invalid email");
+            // flash("register", "Invalid email");
             header("Location: ../view/index.php");
             die();
         }
 
         if(strlen($data['password']) < 8){
-            flash("register", "Invalid password");
+            // flash("register", "Invalid password");
             header("Location: ../view/index.php");
             die();
         }
 
         if(strlen($data['tel']) < 10){
-            flash("register", "Invalid telephone number");
+            // flash("register", "Invalid telephone number");
             header("Location: ../view/index.php");
             die();
         }
 
         if($this->recruteurModel->checkIfUserExists($data['email'])){
-            flash("register", "Username or email already taken");
+            // flash("register", "Username or email already taken");
             header("Location: ../view/index.php");
             die();
         }
@@ -68,7 +67,7 @@ class Recruteurs extends Users{
         ];
 
         if(empty($data['user']) || empty($data['password'])){
-            flash("login", "Please fill out all inputs");
+            // flash("login", "Please fill out all inputs");
             header("Location: ../view/index.php");
             exit();
         }
@@ -77,15 +76,14 @@ class Recruteurs extends Users{
             $logged = $this->recruteurModel->login($data['user'],$data['password']);
             if($logged){
                 $this->makeSession($logged,'recruteur');
-                echo "logged";
-                // header("Location: ../view/offres.php");  
+                header("Location: ../view/profil.php");  
                 }
             else{
-                flash("login", "Password Incorrect");
+                // flash("login", "Password Incorrect");
                 header("Location: ../view/index.php");
             }
         }else{
-            flash("login", "No user found");
+            // flash("login", "No user found");
             header("Location: ../view/index.php");
         }
     }

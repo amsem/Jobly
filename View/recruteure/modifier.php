@@ -31,8 +31,12 @@
     <input  type="text" class="form-control" id="exampleFormControlInput1">
   </div>
   <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">CV</label>
-  <input  type="file" class="form-control" id="exampleFormControlInput1">
+  <label for="exampleFormControlInput1" class="form-label">Nom d'entreprise</label>
+  <input  type="text" class="form-control" id="exampleFormControlInput1">
+  </div>
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Numéro de Téléphone</label>
+  <input  type="text" class="form-control" id="exampleFormControlInput1">
   </div>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Mot De Passe</label>

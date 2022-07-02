@@ -33,7 +33,7 @@
             if($candidatures){
                 return $candidatures;
             }else{
-                flash("candidature", "There isn't any candidate");
+                // flash("candidature", "There isn't any candidate");
                 return Array();
             }
         }

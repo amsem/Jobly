@@ -1,48 +1,43 @@
 <?php 
-    require_once "../Model/Job.php";
-    require_once "../Libraries/flash.php";
+    require_once "c:/xampp/htdocs/dev.jobly.com/Model/Job.php";
     class Jobs{
         private $jobModel;
         public function __construct(){
             $this->jobModel = new Job;
         }
         public function postJob(){
+            session_start();
             $data = [
                 'title' => trim($_POST['title']),
                 'desc' => trim($_POST['desc']),
                 'salary' => trim($_POST['salary']),
                 'type' => trim($_POST['type']),
                 'place' => trim($_POST['place']),
-                'userID' => trim($_SESSION['id'])
+                'userEMAIL' => trim($_SESSION['email']),
+                'category' => trim($_POST['category'])
             ];
-            
             if(empty($data['title']) || empty($data['desc']) || empty($data['salary']) || 
-            empty($data['type']) || empty($data['place'])){
-                flash("job", "Please fill out all inputs");
-                header("Location: ../view/dashboard.php");
+            empty($data['type']) || empty($data['place'])|| empty($data['category'])){
+                $_SESSION['erreur'] = "Please fill out all inputs";
+                header("Location: ../view/jobpost.php");
                 die();
             }
 
             if(!preg_match("/^[0-9]*$/", $data['salary'])){
-                flash("job", "Invalid number");
-                header("Location: ../view/dashboard.php");
+                $_SESSION['erreur'] = "Invalid number";
+                header("Location: ../view/jobpost.php");
                 die();
             }
 
             if($data['type'] != "full time" && $data['type'] != "part time"){
-                flash("job", "Please enter full/part time in employement type");
-                header("Location: ../view/dashboard.php");
-                die();
-            }
-
-            if($data['place'] != "distanciel" && $data['place'] != "presentiel"){
-                flash("job", "Please enter distanciel/presentiel in workplace type");
-                header("Location: ../view/dashboard.php");
+                $_SESSION['erreur'] = "Please enter full/part time in employement type";
+                header("Location: ../view/jobpost.php");
                 die();
             }
 
             if($this->jobModel->postJob($data)){
-                header("Location: ../view/dashboard.php");
+                $_SESSION['success'] = "L'offre partage avec succes";
+                header("Location: ../view/jobpost.php");
             }else{
                 die("Something went wrong");
             }
@@ -71,14 +66,24 @@
             if($jobs){
                 return $jobs;
             }else{
-                flash("dashboard", "You did't post any job");
+                // flash("dashboard", "You did't post any job");
                 return Array();
+            }
+        }
+
+        public function deleteJobPostedByUser(){
+            session_start();
+            $id = $_GET['job'];
+            if($this->jobModel->deleteJobPostedByUser($id)){
+                $_SESSION['message'] = "Job deleted successfully";
+                header("Location: ../view/recruteure/offres.php");
             }
         }
     }
     $init = new Jobs;
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if(isset($_POST['submit'])) $init->postJob();
-
+        if(isset($_POST['publier'])) $init->postJob();
+    }else{
+        if(isset($_GET['job'])) $init->deleteJobPostedByUser();
     }
 ?>

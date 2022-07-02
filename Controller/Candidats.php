@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../Model/Candidat.php";
+require_once "c:/xampp/htdocs/dev.jobly.com/Model/Candidat.php";
 require "Users.php";
 
 class Candidats extends Users{
@@ -67,7 +67,7 @@ class Candidats extends Users{
             $logged = $this->candidatModel->login($data['user'],$data['password']);
             if($logged){
                 $this->makeSession($logged,'candidateur');
-                header("Location: ../view/dashboard.php");  
+                header("Location: ../view/profil.php");  
                 }
             else{
                 $_SESSION['erreur'] = "Password incorrect";
