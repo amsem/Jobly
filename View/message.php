@@ -67,13 +67,46 @@
           </div>
           <div class="type_msg">
             <div class="input_msg_write">
-              <input type="text" class="write_msg" placeholder="Type a message" />
-              <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+              <input type="text" value="<?php echo $_SESSION['email']; ?>" id="from_email" hidden>
+              <input type="text" class="write_msg" placeholder="Type a message" id="msgOmar"/>
+              <button class="msg_send_btn" type="button" id="send"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
             </div>
           </div>
         </div>
       </div>
     </div>
 </div>
+<script>
+    const sendMessage = document.getElementById("send");
+    
+    sendMessage.addEventListener("click",(e)=>{
+      const msg = document.getElementById("msgOmar").value;
+      const from = document.getElementById("from_email").value;
+           const xhr = new XMLHttpRequest();
+            console.log(msg);
+            console.log(from);
+
+            xhr.open("GET","../Libraries/Message.php?message="+msg+"&from="+from,true);
+            xhr.onload = function(){
+                console.log(this.responseText);
+            }
+            xhr.send();
+            
+    })
+
+// setInterval(function(){
+//             const xhr = new XMLHttpRequest();
+
+//             xhr.onload = function(){
+//                 console.log(this.responseText);
+//             }
+
+//             xhr.open("POST","inc/functions.php",true);
+//             xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+//             xhr.send("auto=<?= $_SESSION['id'] ?>");
+//         },30000)
+
+
+</script>
 
 <?php require "template/footer.php"; ?>

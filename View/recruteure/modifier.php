@@ -45,19 +45,7 @@
   </div>
     <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Numéro de Téléphone</label>
-<<<<<<< HEAD
   <input  type="text" class="form-control" id="exampleFormControlInput1" name="tel">
-=======
-  <input  type="text" class="form-control" id="exampleFormControlInput1">
-  </div>
-  <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Ancien Mot De Passe</label>
-  <input  type="text" class="form-control" id="exampleFormControlInput1" >
-</div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Mot De Passe</label>
-    <input  type="text" class="form-control" id="exampleFormControlInput1" >
->>>>>>> 411e022297de0ea7aca238985c4c6847679b55c7
   </div>  
   <div class="field is-grouped">
     <input type="submit" class="btn btn1 btn-secondary" name="modifier" value="Modifier">
