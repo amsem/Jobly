@@ -123,7 +123,7 @@
             <div class="field">
                 <label class="form-label">Date de Naissance</label>
                 <div class="control">
-                    <input class="form-control" type="text" name="birthday">
+                    <input class="form-control" type="date" name="birthday">
                 </div>
             </div>
             <div class="field">
@@ -198,7 +198,7 @@
             <div class="field">
                 <label class="form-label">Date de Naissance</label>
                 <div class="control">
-                    <input class="form-control" type="text" name="birthday">
+                    <input class="form-control" type="date" name="birthday">
                 </div>
             </div>
             <div class="field">

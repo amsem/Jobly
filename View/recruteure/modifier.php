@@ -1,10 +1,10 @@
 <?php 
  require "../template/header.php";
-  //if(!isset($_SESSION['role'])){
-    //header("Location: index.php");
-  //}else if($_SESSION['role'] != "recruteur"){
-    //header("Location: index.php");
-  //}
+  if(!isset($_SESSION['role'])){
+    header("Location: ../index.php");
+  }else if($_SESSION['role'] != "recruteur"){
+    header("Location: ../index.php");
+  }
 ?>
 <div class="postjob">
   <style type="text/css">

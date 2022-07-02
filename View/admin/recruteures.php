@@ -94,16 +94,16 @@
                     print ' 
                       <tr>
                         <th scope="row">'.$i.'</th>
-                        <td>'.$recruteur->name.'</td>
-                        <td> '.$recruteur->family_name.' </td>
+                        <td>'.$recruteur->nom.'</td>
+                        <td> '.$recruteur->prenom.' </td>
                         <td> '.$recruteur->email.' </td>
-                        <td> '.$recruteur->company_name.' </td>
+                        <td> '.$recruteur->entreprise.' </td>
                         <td>';
                         if($recruteur->valider != 1){
-                          echo '<a href="../../Controller/Adminn.php?validate='.$recruteur->id.'" class="btn btn-success">Valider</a> ';
+                          echo '<a href="../../Controller/Adminn.php?validate='.$recruteur->email.'" class="btn btn-success">Valider</a> ';
                         }
                         
-                        echo '<a onClick="return popUpDeleteCategory()" href="../../Controller/Adminn.php?id='.$recruteur->id.'" class="btn btn-danger">Supprimer</a>
+                        echo '<a onClick="return popUpDeleteCategory()" href="../../Controller/Adminn.php?id='.$recruteur->email.'" class="btn btn-danger">Supprimer</a>
                         </td>
                       </tr>';
                   } 

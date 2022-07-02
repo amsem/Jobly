@@ -19,11 +19,12 @@
         }
 
         public function register($data){
-            $this->db->query('INSERT INTO candidat (name, family_name, email, password) VALUES (:name, :fname, :email, :password)');
+            $this->db->query('INSERT INTO candidat (name, family_name, email, password,date_de_naissance) VALUES (:name, :fname, :email, :password,:date)');
             $this->db->bind(':name', $data['name']);
             $this->db->bind(':fname', $data['family_name']);
             $this->db->bind(':email', $data['email']);
             $this->db->bind(':password', $data['password']);
+            $this->db->bind(':date', $data['date']);
             
             if($this->db->execute()){
                 return true;

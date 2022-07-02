@@ -1,6 +1,11 @@
 <?php 
     require "../template/header.php"; 
     include_once "../../Controller/Jobs.php";
+    if(!isset($_SESSION['role'])){
+        header("Location: ../index.php");
+      }else if($_SESSION['role'] != "recruteur"){
+        header("Location: ../index.php");
+      }
     $jobObject = new Jobs;
     $jobs = $jobObject->getAllJobsPostedByUser($_SESSION['email']);
 ?>

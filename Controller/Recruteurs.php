@@ -16,7 +16,8 @@ class Recruteurs extends Users{
             'entreprise' => trim($_POST['company_name']),
             'email' => trim($_POST['email']),
             'tel' => trim($_POST['tel']),
-            'password' => trim($_POST['password'])
+            'password' => trim($_POST['password']),
+            'date' => trim($_POST['birthday'])
 
         ];
 

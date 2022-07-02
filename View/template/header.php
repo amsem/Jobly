@@ -71,13 +71,28 @@
                     </form>
 
                     <a href="testimonial.php" class="nav-item nav-link pr-4">About Us</a>
-                    <a class="nav-item nav-link " role="button" data-bs-toggle="modal" data-bs-target="#Modal2">
-                        S'inscrire
-                    </a>
-                   
-                   <a class="nav-item nav-link " role="button" data-bs-toggle="modal" data-bs-target="#Modal1">
-                        Se Connecter
-                    </a>
+                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] != "admin"){
+                        echo '<a class="nav-item nav-link " href="profil.php">
+                            dashboard
+                        </a>';
+                        if($_SESSION['role'] == "candidateur"){
+                            echo '<a class="nav-item nav-link " href="../Controller/Candidats.php?q=logout">
+                            Se deconnecter
+                        </a>';
+                        }else{
+                            echo '<a class="nav-item nav-link " href="../Controller/Recruteurs.php?q=logout">
+                            Se deconnecter
+                        </a>';
+                        }
+                    }else{
+                        echo '<a class="nav-item nav-link " role="button" data-bs-toggle="modal" data-bs-target="#Modal2">
+                        inscrire
+                    </a>';
+                    echo '<a class="nav-item nav-link " role="button" data-bs-toggle="modal" data-bs-target="#Modal1">
+                    Se Connecter
+                </a>';
+                    } ?>
+                
                     <a href="contact.php" class="nav-item nav-link ">Nous Contacter</a>
                     <?php
                         if(!isset($_SESSION['role']) || $_SESSION['role'] == "recruteur"){

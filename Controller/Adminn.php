@@ -1,6 +1,7 @@
 <?php
 
 require_once "C:/xampp/htdocs/dev.jobly.com/Model/Admin.php";
+require "c:/xampp/htdocs/dev.jobly.com/Libraries/Mail.php";
 
 class Adminn{
     private $adminModel;
@@ -58,8 +59,8 @@ class Adminn{
         }
 
         public function deleteCan(){
-            $id = $_GET['id'];
-            if($this->adminModel->deleteCan($id)){
+            $email = $_GET['id'];
+            if($this->adminModel->deleteCan($email)){
                 $_SESSION['message'] = "candidat deleted successfully";
                 header("Location: ../view/admin/candidats.php");
             }
@@ -75,16 +76,17 @@ class Adminn{
         }
 
         public function deleteRec(){
-            $id = $_GET['rec'];
-            if($this->adminModel->deleteRec($id)){
+            $email = $_GET['rec'];
+            if($this->adminModel->deleteRec($email)){
                 $_SESSION['message'] = "recruter deleted successfully";
                 header("Location: ../view/admin/recruteures.php");
             }
         }
 
         public function  validateRec(){
-            $id = $_GET['validate'];
-            if($this->adminModel->validateRec($id)){
+            $email = $_GET['validate'];
+            if($this->adminModel->validateRec($email)){
+                mailTo($email,"Account activation","Congratulation your account has been activated successfully");
                 $_SESSION['message'] = "recruter validated successfully";
                 header("Location: ../view/admin/recruteures.php");
             }

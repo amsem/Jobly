@@ -14,7 +14,8 @@ class Candidats extends Users{
             'name' => trim($_POST['name']),
             'family_name' => trim($_POST['family_name']),
             'email' => trim($_POST['email']),
-            'password' => trim($_POST['password'])
+            'password' => trim($_POST['password']),
+            'date' => trim($_POST['birthday'])
         ];
 
         if(empty($data['email']) || empty($data['family_name']) || 

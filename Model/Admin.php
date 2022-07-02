@@ -21,9 +21,9 @@
             }
         }
 
-        public function validateRec($id){
-            $this->db->query('UPDATE recruteur SET valider = "1" WHERE id = :id');
-            $this->db->bind(':id',$id);
+        public function validateRec($email){
+            $this->db->query('UPDATE recruteur SET valider = "1" WHERE email = :email');
+            $this->db->bind(':email',$email);
             if($this->db->execute()){
                 return true;
             }else{
@@ -31,9 +31,9 @@
             }
         }
 
-        public function deleteRec($id){
-            $this->db->query('DELETE FROM recruteur WHERE id = :id');
-            $this->db->bind(':id',$id);
+        public function deleteRec($email){
+            $this->db->query('DELETE FROM recruteur WHERE email = :email');
+            $this->db->bind(':email',$email);
             if($this->db->execute()){
                 return true;
             }else{
@@ -41,9 +41,9 @@
             }
         }
 
-        public function deleteCan($id){
-            $this->db->query('DELETE FROM candidat WHERE id = :id');
-            $this->db->bind(':id',$id);
+        public function deleteCan($email){
+            $this->db->query('DELETE FROM candidat WHERE email = :email');
+            $this->db->bind(':email',$email);
             if($this->db->execute()){
                 return true;
             }else{

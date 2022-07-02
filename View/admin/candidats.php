@@ -99,7 +99,7 @@
                         <td> '.$candidat->email.' </td>
                         <td> '.$candidat->date_de_naissance.' </td>
                         <td> 
-                          <a onClick="return popUpDeleteCategory()" href="../../Controller/Adminn.php?id='.$candidat->id.'" class="btn btn-danger">Supprimer</a>
+                          <a onClick="return popUpDeleteCategory()" href="../../Controller/Adminn.php?id='.$candidat->email.'" class="btn btn-danger">Supprimer</a>
                         </td>
                       </tr>';
                   } 
