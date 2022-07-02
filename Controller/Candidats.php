@@ -112,6 +112,8 @@ class Candidats extends Users{
 
 
     public function modifyInformations(){
+        session_start();
+
 
         $data = [
             'name' => trim($_POST['prenom']),
@@ -146,6 +148,7 @@ class Candidats extends Users{
     }
 
     public function newPass(){
+        session_start();
         $data = [
             'ancien' => trim($_POST['oldPass']),
             'nouveau' => trim($_POST['newPass']),
@@ -190,7 +193,7 @@ class Candidats extends Users{
         if(isset($_POST['register'])) $init->register();
         if(isset($_POST['login'])) $init->login();
         if(isset($_POST['modifier'])) $init->modifyInformations();
-        if(isset($_POST['modifierMP'])) $init->newPass();
+        if(isset($_POST['pass'])) $init->newPass();
     }else{
         if(isset($_GET['q'])) $init->logout();
     }

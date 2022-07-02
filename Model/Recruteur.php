@@ -49,6 +49,34 @@
             }
         }
 
+        public function modifyInformations($email,$data){
+            $this->db->query('UPDATE recruteur SET nom = :nom,prenom = :prenom,entreprise = :entreprise,tel = :tel,date_de_naissance = :date_de_naissance WHERE email = :emailCond');
+            $this->db->bind(':nom', $data['name']);
+            $this->db->bind(':prenom', $data['family_name']);
+            $this->db->bind(':entreprise', $data['entreprise']);
+            $this->db->bind(':tel', $data['tel']);
+            $this->db->bind(':date_de_naissance', $data['date']);
+            $this->db->bind(':emailCond', $email);
+        
+            if($this->db->execute()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        public function newPass($email,$pass){
+            $this->db->query('UPDATE recruteur SET password = :pass WHERE email = :emailCond');
+            $this->db->bind(':pass', $pass);
+            $this->db->bind(':emailCond', $email);
+        
+            if($this->db->execute()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
     }
 
 ?>
