@@ -17,7 +17,7 @@
       margin-bottom: 40px;
     }
   </style>
-  <h4 class="titlejob">modifier votre profile</h4>
+  <h4 class="titlejob">Modifier Votre Profile</h4>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Nom</label>
     <input  type="text" class="form-control" id="exampleFormControlInput1">

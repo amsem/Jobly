@@ -39,6 +39,10 @@
   <input  type="text" class="form-control" id="exampleFormControlInput1">
   </div>
   <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Ancien Mot De Passe</label>
+  <input  type="text" class="form-control" id="exampleFormControlInput1" >
+</div>
+  <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Mot De Passe</label>
     <input  type="text" class="form-control" id="exampleFormControlInput1" >
   </div>  

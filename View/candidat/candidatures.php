@@ -35,14 +35,15 @@
                                                 }
                                 </style>  
                                 <div class="dropdown-menu" >
-                                    <a class="dropdown-item" href="">voir status</a>
-                                    <a class="dropdown-item" href="">supprimer</a>
+                                    <a class="dropdown-item" href="">Voir Status</a>
+                                    <a class="dropdown-item" href="">Supprimer</a>
+                                    <a class="dropdown-item" href="">Voir Le Profile</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <?php } ?>
-                    <a class="btn btn-primary py-3 px-5" href="">voir plus de candidatures</a>
+                    <a class="btn btn-primary py-3 px-5" href="">Voir Plus De Candidatures</a>
                 </div>
             </div>
         </div>

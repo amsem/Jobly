@@ -32,9 +32,6 @@
               } ?>
               
             </div>
-            <div class="text mt-3"> 
-              <span>Eleanor Pena is a creator of minimalistic x bold graphics and digital artwork.<br><br> Artist/ Creative Director by Day #NFT minting@ with FND night. </span> 
-            </div>
             <?php
                 if(!isset($_SESSION['role']) || $_SESSION['role'] == "recruteur"){
                     echo '<span class="companyname mt-3">helloworld.org</span> 
@@ -48,7 +45,7 @@
               <span><i class="fa fa-linkedin"></i></span>
             </div> 
             <div class="skills gap-3 "> 
-              <h4>skills</h4> 
+              <h4>compétences</h4> 
               <div>py</div>
               <div>js</div>
               <div>html</div>
