@@ -43,6 +43,7 @@
                             <h4 class="mb-4">Apply For The Job</h4>
                             <form action="../Controller/Candidatures.php" method="POST">
                                 <?php $_SESSION['job_id'] = $_GET['id']; ?>
+                                <input name="rec" type="text" value="<?php echo $job_det->user_email; ?>" hidden >
                                 <div class="row g-3">
                                     <div class="col-12 col-sm-6">
                                         <input type="text" class="form-control" placeholder="Portfolio Website" name="portfolio">
