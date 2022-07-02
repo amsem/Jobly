@@ -1,7 +1,7 @@
 <?php 
     require_once "Database.php";
 
-    class Search{
+    class Message{
         private $db;
         public function __construct(){
             $this->db = new Database;
@@ -21,8 +21,10 @@
             }
         }
         
-        public function getAllMsg(){
-            $this->db->query('SELECT * FROM message');
+        public function getAllMsg($email){
+            $this->db->query('SELECT * FROM message WHERE email_from = :email_from OR email_to = :email_to');
+            $this->db->bind(':email_from', $email);
+            $this->db->bind(':email_to',$email);
             $row = $this->db->resultSet();
             if($this->db->rowCount() > 0){
                 return $row;
@@ -32,22 +34,47 @@
         }
 
         public function getLastMsg(){
-            $this->db->query('SELECT * FROM message ORDER BY id DESC');
+            session_start();
+            $this->db->query('SELECT * FROM message WHERE email_from = :email_from OR email_to = :email_to ORDER BY id DESC');
+            $this->db->bind(':email_from', $_GET['receive']);
+            $this->db->bind(':email_to', $_GET['receive']);
             $row = $this->db->single();
-            if($this->db->rowCount() > 0){
-                return $row;
-            }else{
-                return false;
+            if($row){
+                if($row->seen == 0){
+                    if($row->email_from == $_SESSION['email']){
+                        print'<div class="outgoing_msg">
+                                <div class="sent_msg">
+                                    <p>'.$row->message.'</p>
+                                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                                </div>';
+                    }else{
+                        print'<div class="received_msg">
+                                <div class="received_withd_msg">
+                                    <p>'.$row->message.'</p>
+                                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                                </div>';
+                    }
+                    $this->db->query('UPDATE message SET seen = "1" WHERE id = :id');
+                    $this->db->bind(':id', $row->id);
+                    
+                    $this->db->execute();
+                }
             }
         }
-
-        
-        
     }
+    $init = new Message;
+        if(isset($_GET['message'])){
+            $data['message'] = $_GET['message'];
+            $data['email_from'] = $_GET['from'];
+            $data['email_to'] = $_GET['to'];
+            $data['pseudo'] = 'test';
+            $init->sendMessage($data);
+         }
 
-    if(isset($_GET)){
-        print_r($_GET);
-    }
+         if(isset($_GET['receive'])){
+            $init->getLastMsg();
+         }
+            
 
 ?>    
 
