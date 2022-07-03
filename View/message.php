@@ -1,7 +1,7 @@
 <?php require "template/header.php"; 
 require "../Libraries/Message.php";
 $messageObject = new Message;
-$messages = $messageObject->getAllMsg($_SESSION['email']);
+$messages = $messageObject->getAllMsg($_SESSION['email'],$_GET['with']);
 
 ?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -139,7 +139,7 @@ $messages = $messageObject->getAllMsg($_SESSION['email']);
               history.innerHTML += this.responseText;
             }
 
-            xhr.open("GET","../Libraries/Message.php?receive=<?php echo $_SESSION['email']; ?>",true);
+            xhr.open("GET","../Libraries/Message.php?receive=<?php echo $_SESSION['email']; ?>"+"&to=<?php echo $_GET['with']; ?>",true);
             xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
             xhr.send();
         },5000)

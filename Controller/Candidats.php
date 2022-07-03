@@ -112,43 +112,26 @@ class Candidats extends Users{
 
 
     public function modifyInformations(){
-        session_start();
-
 
         $data = [
             'name' => trim($_POST['prenom']),
             'family_name' => trim($_POST['nom']),
-            'email' => trim($_POST['email']),
             'date' => trim($_POST['birthday']),
             'cv' => $this->uploadFile($_FILES['cv'])
         ];
         $user = $this->candidatModel->checkIfUserExists($_SESSION['email']);
-        if(empty($data['name'])) $data['name'] = $user->name;
-        if(empty($data['family_name'])) $data['family_name'] = $user->family_name;
-        if(empty($data['email'])) $data['email'] = $user->email;
-        if(empty($data['date']) && empty($user->date_de_naissance)){
-            $_SESSION['error'] = "Il faut remplir la date";
-            header("Location: ../view/candidat/profile.php");
-            die();
-        }elseif(empty($data['date'])){
-            $data['date'] = $user->date_de_naissance;
-        }
-        if(empty($data['cv']) && empty($user->cv)){
-            $_SESSION['error'] = "Il faut remplir le cv";
-            header("Location: ../view/candidat/profile.php");
-            die();
-        }elseif(empty($data['cv'])){
-            $data['cv'] = $user->cv;
-        }  
+        if(empty($data['name'])) $data['name'] = $user->nom;
+        if(empty($data['family_name'])) $data['family_name'] = $user->prenom;
+        if(empty($data['date'])) $data['date'] = $user->date_de_naissance;
+        if(empty($data['cv'])) $data['cv'] = $user->cv;
+
         if($this->candidatModel->modifyInformations($_SESSION['email'],$data)){
-            $_SESSION['email'] = $data['email'];
             $_SESSION['message'] = "Les informations ont ete modifier avec succes";
-            header("Location: ../view/candidat/profile.php");
+            header("Location: ../view/candidat/modifier.php");
         }
     }
 
     public function newPass(){
-        session_start();
         $data = [
             'ancien' => trim($_POST['oldPass']),
             'nouveau' => trim($_POST['newPass']),
@@ -157,24 +140,24 @@ class Candidats extends Users{
         $user = $this->candidatModel->checkIfUserExists($_SESSION['email']);
         if(empty($data['ancien']) && empty($data['nouveau']) && empty($data['confirm'])){
             $_SESSION['error'] = "Il faut remplir tous les camps";
-            header("Location: ../view/candidat/modifier.php");
+            header("Location: ../view/candidat/modifier_pass.php");
             die();
         }
         if(password_verify($data['ancien'],$user->password)){
             if(strlen($data['nouveau']) < 8 || strlen($data['confirm']) < 8){
                 $_SESSION['error'] = "le mot de passe doit etre > 8";
-                header("Location: ../view/candidat/modifier.php");
+                header("Location: ../view/candidat/modifier_pass.php");
                 die();
             }
             if($data['nouveau'] == $data['confirm']){
                 $password = password_hash($data['nouveau'],PASSWORD_DEFAULT);
                 if($this->candidatModel->newPass($_SESSION['email'],$password)){
                     $_SESSION['message'] = "Les informations ont ete modifier avec succes";
-                    header("Location: ../view/candidat/modifier.php");
+                    header("Location: ../view/candidat/modifier_pass.php");
                 }
             }else{
                 $_SESSION['error'] = "Nouveau mot de passe et confirmer don't match";
-                header("Location: ../view/candidat/modifier.php");
+                header("Location: ../view/candidat/modifier_pass.php");
                 die();
             }
         }else{

@@ -1,10 +1,10 @@
 <?php 
  require "../template/header.php";
-  if(!isset($_SESSION['role'])){
-    header("Location: ../index.php");
-  }else if($_SESSION['role'] != "recruteur"){
-    header("Location: ../index.php");
-  }
+ if(!isset($_SESSION['role'])){
+  header("Location: ../index.php");
+}else if($_SESSION['role'] != "candidateur"){
+  header("Location: ../index.php");
+}
 ?>
 <div class="postjob">
   <style type="text/css">
@@ -26,7 +26,7 @@
               unset($_SESSION['message']);
               }
   ?>
-  <form action="../../Controller/Recruteurs.php" method="post">
+  <form action="../../Controller/Candidats.php" method="post">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Ancien mot de passe</label>
         <input  type="password" class="form-control" id="exampleFormControlInput1" name="oldPass">
@@ -43,7 +43,6 @@
         <input type="submit" class="btn btn1 btn-secondary" name="pass" value="modifier">
         <button class="btn btn1 btn-secondary">Annuler</button>
     </div>
-     
   </form>
   </div>
 </div>

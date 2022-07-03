@@ -1,5 +1,5 @@
 <?php
-    require_once "../Libraries/Database.php";
+    require_once "c:/xampp/htdocs/dev.jobly.com/Libraries/Database.php";
     
     class Category{
         private $db;

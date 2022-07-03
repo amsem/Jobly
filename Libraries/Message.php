@@ -21,10 +21,12 @@
             }
         }
         
-        public function getAllMsg($email){
-            $this->db->query('SELECT * FROM message WHERE email_from = :email_from OR email_to = :email_to');
+        public function getAllMsg($email,$to){
+            $this->db->query('SELECT * FROM message WHERE email_from = :email_from AND email_to = :too OR email_to = :email_to AND email_from = :ffrom ORDER BY id DESC');
             $this->db->bind(':email_from', $email);
-            $this->db->bind(':email_to',$email);
+            $this->db->bind(':email_to', $email);
+            $this->db->bind(':too', $to);
+            $this->db->bind(':ffrom', $to);
             $row = $this->db->resultSet();
             if($this->db->rowCount() > 0){
                 return $row;
@@ -35,9 +37,11 @@
 
         public function getLastMsg(){
             session_start();
-            $this->db->query('SELECT * FROM message WHERE email_from = :email_from OR email_to = :email_to ORDER BY id DESC');
+            $this->db->query('SELECT * FROM message WHERE email_from = :email_from AND email_to = :too OR email_to = :email_to AND email_from = :ffrom ORDER BY id DESC');
             $this->db->bind(':email_from', $_GET['receive']);
             $this->db->bind(':email_to', $_GET['receive']);
+            $this->db->bind(':too', $_GET['to']);
+            $this->db->bind(':ffrom', $_GET['to']);
             $row = $this->db->single();
             if($row){
                 if($row->seen == 0){

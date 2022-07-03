@@ -96,9 +96,9 @@
                             </div>  
 
                             </div>
-                            <button class="btn btn-secondary">
+                            <a class="btn btn-secondary" href="modifier_offre.php?id=<?php echo $job->job_id; ?>">
                                 modifier
-                            </button>
+                            </a>
                             <button class="btn btn-dark">
                                 annuler
                             </button>

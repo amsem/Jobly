@@ -51,6 +51,10 @@
     <input type="submit" class="btn btn1 btn-secondary" name="modifier" value="Modifier">
     <button class="btn btn1 btn-secondary">Annuler</button>
   </div>
+  <label>                    
+      <a class="btn" href="modifier_pass.php" >Modifier mot de passe</button>
+
+  </label>
   </form>
   </div>
 </div>

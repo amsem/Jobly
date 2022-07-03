@@ -1,4 +1,10 @@
-<?php require "template/header.php"; ?>
+<?php 
+    require "template/header.php"; 
+
+    require_once "../Controller/Categories.php";
+    $categoryObject = new Categories;
+    $categories = $categoryObject->getCategories();
+  ?>
         <!-- Carousel Start -->
         <div class="container-fluid p-0">
             <div class="owl-carousel header-carousel position-relative">
@@ -51,15 +57,10 @@
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select border-0" >
-                                    <option value="1">Categorie 1</option>
-                                    <option value="2">Categorie 2</option>
-                                    <option value="3">Categorie 3</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <select class="form-select border-0" >
-                                    <option value="1">distanciel</option>
-                                    <option value="2">presentiel</option>
+                                    <?php foreach($categories as $cat){
+                                        print '<option value="'.$cat->nom.'">'.$cat->nom.'</option>';
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>
@@ -78,62 +79,14 @@
             <div class="container">
                 <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Nos Categories</h1>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="cat-item rounded p-4" href="">
-                            <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                            <h6 class="mb-3">Marketing</h6>
-                            <p class="mb-0">123 offres</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="cat-item rounded p-4" href="">
-                            <i class="fa fa-3x fa-headset text-primary mb-4"></i>
-                            <h6 class="mb-3">IT support</h6>
-                            <p class="mb-0">123 offres</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="cat-item rounded p-4" href="">
-                            <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
-                            <h6 class="mb-3">Human Resource</h6>
-                            <p class="mb-0">123 offres</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <a class="cat-item rounded p-4" href="">
-                            <i class="fa fa-3x fa-tasks text-primary mb-4"></i>
-                            <h6 class="mb-3">Project Management</h6>
-                            <p class="mb-0">123 offres</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="cat-item rounded p-4" href="">
-                            <i class="fa fa-3x fa-chart-line text-primary mb-4"></i>
-                            <h6 class="mb-3">Web Developement</h6>
-                            <p class="mb-0">123 offres</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="cat-item rounded p-4" href="">
-                            <i class="fa fa-3x fa-hands-helping text-primary mb-4"></i>
-                            <h6 class="mb-3">Mobile & Desktop Developement</h6>
-                            <p class="mb-0">123 offres</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="cat-item rounded p-4" href="">
-                            <i class="fa fa-3x fa-book-reader text-primary mb-4"></i>
-                            <h6 class="mb-3">AI and data science</h6>
-                            <p class="mb-0">123 offres</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <a class="cat-item rounded p-4" href="">
-                            <i class="fa fa-3x fa-drafting-compass text-primary mb-4"></i>
-                            <h6 class="mb-3">Cybersecurity</h6>
-                            <p class="mb-0">123 offres</p>
-                        </a>
-                    </div>
+                    <?php foreach($categories as $cat){
+                        print '<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <a class="cat-item rounded p-4" href="search.php?cat='.$cat->nom.'">
+                                        <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
+                                        <h6 class="mb-3">'.$cat->nom.'</h6>
+                                    </a>
+                                </div>';
+                    } ?>
                 </div>
             </div>
         </div>

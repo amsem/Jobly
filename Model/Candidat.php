@@ -19,7 +19,7 @@
         }
 
         public function register($data){
-            $this->db->query('INSERT INTO candidat (name, family_name, email, password,date_de_naissance) VALUES (:name, :fname, :email, :password,:date)');
+            $this->db->query('INSERT INTO candidat (nom, prenom, email, password,date_de_naissance) VALUES (:name, :fname, :email, :password,:date)');
             $this->db->bind(':name', $data['name']);
             $this->db->bind(':fname', $data['family_name']);
             $this->db->bind(':email', $data['email']);
@@ -45,10 +45,9 @@
         }
 
         public function modifyInformations($email,$data){
-            $this->db->query('UPDATE candidat SET name = :name,family_name = :family_name,email = :email,date_de_naissance = :date,cv = :cv WHERE email = :emailCond');
+            $this->db->query('UPDATE candidat SET nom = :name,prenom = :family_name,date_de_naissance = :date,cv = :cv WHERE email = :emailCond');
             $this->db->bind(':name', $data['name']);
             $this->db->bind(':family_name', $data['family_name']);
-            $this->db->bind(':email', $data['email']);
             $this->db->bind(':date', $data['date']);
             $this->db->bind(':cv', $data['cv']);
             $this->db->bind(':emailCond', $email);
