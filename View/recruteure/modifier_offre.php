@@ -30,16 +30,13 @@
   <?php if (isset($_SESSION['erreur']) ){
               print'<div class="alert alert-danger">'.$_SESSION['erreur'].'</div>';
               unset($_SESSION['erreur']);
-            }else if(isset($_SESSION['success'])){
-              print'<div class="alert alert-success">'.$_SESSION['success'].'</div>';
-              unset($_SESSION['success']);
+            }else if(isset($_SESSION['message'])){
+              print'<div class="alert alert-success">'.$_SESSION['message'].'</div>';
+              unset($_SESSION['message']);
               }
   ?>
   <form action="../../Controller/Jobs.php" method="post">
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Titre</label>
-    <input  type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="Ex:developpeur web ">
-  </div>
+  <input  type="text" name="id" value="<?php echo $_GET['id']; ?>" hidden>
   <div class="mb-3">
     <label for="exampleFormControlTextarea1" class="form-label">description</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="3"></textarea>
@@ -51,7 +48,7 @@
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Type</label>
     <select name="type" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-      <option  selected>selectionner le type de contrat</option>
+      <option  selected></option>
       <option value="part time">temps partiel</option>
       <option value="full time">temps plein</option>
   </select>
@@ -59,7 +56,7 @@
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Categorie</label>
     <select name="category" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-      <option  selected>selectionner la categorie d'offre</option>
+      <option  selected></option>
       <?php foreach($categories as $category){ ?>
         <option value="<?php echo $category->nom; ?>"><?php echo $category->nom; ?></option>'
       <?php }?>

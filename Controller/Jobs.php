@@ -79,10 +79,33 @@
                 header("Location: ../view/recruteure/offres.php");
             }
         }
+
+        public function modifyInformations(){
+            session_start();
+            $data = [
+                'job_desc' => trim($_POST['desc']),
+                'salary' => trim($_POST['salary']),
+                'type' => trim($_POST['type']),
+                'place' => trim($_POST['place']),
+                'category' => trim($_POST['category']),
+            ];
+            $job = $this->jobModel->getJobDetails($_POST['id']);
+            if(empty($data['job_desc'])) $data['job_desc'] = $job->job_desc;
+            if(empty($data['salary'])) $data['salary'] = $job->salary;
+            if(empty($data['type'])) $data['type'] = $job->type;
+            if(empty($data['place'])) $data['place'] = $job->place;
+            if(empty($data['category'])) $data['category'] = $job->category;
+    
+            if($this->jobModel->modifyOffre($_POST['id'],$data)){
+                $_SESSION['message'] = "Les informations ont ete modifier avec succes";
+                header("Location: ../view/recruteure/modifier_offre.php?id=".$_POST['id']);
+            }
+        }
     }
     $init = new Jobs;
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['publier'])) $init->postJob();
+        if(isset($_POST['modifier'])) $init->modifyInformations();
     }else{
         if(isset($_GET['job'])) $init->deleteJobPostedByUser();
     }

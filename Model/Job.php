@@ -65,6 +65,21 @@
                 return false;
             }
         }
+
+        public function modifyOffre($id,$data){
+            $this->db->query('UPDATE jobs jobs SET job_desc=:job_desc,salary=:salary,type=:type,place=:place,category=:category WHERE job_id=:id');
+            $this->db->bind(':id',$id);
+            $this->db->bind(':job_desc',$data['job_desc']);
+            $this->db->bind(':salary',$data['salary']);
+            $this->db->bind(':type',$data['type']);
+            $this->db->bind(':place',$data['place']);
+            $this->db->bind(':category',$data['category']);
+            if($this->db->execute()){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 
 ?>
