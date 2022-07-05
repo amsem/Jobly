@@ -6,17 +6,17 @@
                         <h5 class="text-white mb-4">Jobly</h5>
                         <a class="btn btn-link text-white-50" href="">About Us</a>
                         <a class="btn btn-link text-white-50" href="">Contactez Nous</a>
-                        <a class="btn btn-link text-white-50" href="">NosServices</a>
+                        <a class="btn btn-link text-white-50" href="">Nos Services</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4">Autres Liens</h5>
-                        <a class="btn btn-link text-white-50" href="">Login</a>
+                        <a class="btn btn-link text-white-50" href="">Connecter</a>
                         <a class="btn btn-link text-white-50" href="">Contactez Nous</a>
                         <a class="btn btn-link text-white-50" href="">Publiez un offre</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4">Contacts</h5>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Tizi-Ouzou, Algérie/p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Tizi-Ouzou, Algérie</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+213 796149697</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>Jobly.contactus@gmail.com</p>
                         <div class="d-flex pt-2">

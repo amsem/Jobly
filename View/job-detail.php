@@ -40,19 +40,19 @@
                                 unset($_SESSION['error']);
                             }
                         ?>
-                            <h4 class="mb-4">Apply For The Job</h4>
+                            <h4 class="mb-4">Postuler pour l'offre</h4>
                             <form action="../Controller/Candidatures.php" method="POST">
                                 <?php $_SESSION['job_id'] = $_GET['id']; ?>
                                 <input name="rec" type="text" value="<?php echo $job_det->user_email; ?>" hidden >
                                 <div class="row g-3">
                                     <div class="col-12 col-sm-6">
-                                        <input type="text" class="form-control" placeholder="Portfolio Website" name="portfolio">
+                                        <input type="text" class="form-control" placeholder="Site du Portflio" name="portfolio">
                                     </div>
                                     <div class="col-12 col-sm-6">
-                                        <textarea class="form-control" rows="5" placeholder="Coverletter" name="coverletter"></textarea>
+                                        <textarea class="form-control" rows="5" placeholder="Lettre De Motivation" name="coverletter"></textarea>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100" type="submit" name="Apply">Apply Now</button>
+                                        <button class="btn btn-primary w-100" type="submit" name="Apply">Postuler Maintenant</button>
                                     </div>
                                 </div>
                             </form>
@@ -61,11 +61,11 @@
         
                     <div class="col-lg-4">
                         <div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
-                            <h4 class="mb-4">Job Summery</h4>
-                            <p><i class="fa fa-angle-right text-primary me-2"></i>Published On: <?= $job_det->date; ?></p>
-                            <p><i class="fa fa-angle-right text-primary me-2"></i>Job Nature: <?= $job_det->type; ?></p>
-                            <p><i class="fa fa-angle-right text-primary me-2"></i>Salary: <?= $job_det->salary; ?> DZD</p>
-                            <p><i class="fa fa-angle-right text-primary me-2"></i>Location: <?= $job_det->place; ?></p>
+                            <h4 class="mb-4">Détails D'offre</h4>
+                            <p><i class="fa fa-angle-right text-primary me-2"></i>Publié: <?= $job_det->date; ?></p>
+                            <p><i class="fa fa-angle-right text-primary me-2"></i>Type: <?= $job_det->type; ?></p>
+                            <p><i class="fa fa-angle-right text-primary me-2"></i>Salaire: <?= $job_det->salary; ?> DZD</p>
+                            <p><i class="fa fa-angle-right text-primary me-2"></i>Lieu: <?= $job_det->place; ?></p>
                         </div>
                     </div>
                 </div>

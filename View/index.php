@@ -53,7 +53,7 @@
                     <div class="col-md-10">
                         <div class="row g-2">
                             <div class="col-md-4">
-                                <input type="text" class="form-control border-0" placeholder="Keyword" />
+                                <input type="text" class="form-control border-0" />
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select border-0" >

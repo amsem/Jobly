@@ -67,8 +67,8 @@
     <input  type="text" class="form-control" id="exampleFormControlInput1" name="place" placeholder="Ex:Presentiel(Tizi-Ouzou)">
   </div>  
   <div class="field is-grouped">
-    <input type="submit" name="modifier" class="btn btn1 btn-secondary" value="modifier">
-    <input type="submit" name="annuler" class="btn btn1 btn-secondary" value="annuler">
+    <input type="submit" name="modifier" class="btn btn1 btn-secondary" value="Modifier">
+    <input type="submit" name="annuler" class="btn btn1 btn-secondary" value="Annuler">
   </div>
   </form>
   </div>

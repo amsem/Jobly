@@ -43,9 +43,9 @@
                                 </style>  
                                 <div class="dropdown-menu" >
                                     <?php $_SESSION['user_email'] = $can->email; ?>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=en traitement">Mettre En Review</a>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=refuser">refuser</a>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=en entrevue">Programmer une interview</a>
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=en traitement">Mettre En Traitement</a>
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=refuser">Refuser</a>
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=en entrevue">Programmer une intervue</a>
                                     <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=embaucher">embaucher</a> 
                                     <a class="dropdown-item" href="">Messager</a> 
                                     <label class="form-label"><button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal20">Voir Le Profile</button></label>

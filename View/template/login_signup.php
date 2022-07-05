@@ -162,7 +162,7 @@
                 <label class="label label2">Avez Vous Deja Un Compte? <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal1">connectez vous</button>
                 </label>
                 <label>                    
-                    <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal3">Connectez Tant Que Candidat</button>
+                    <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal3">Inscrire Tant Que Candidat</button>
 
                 </label>                    
             </div>
@@ -225,7 +225,7 @@
                 <label class="label label2">Avez Vous Deja Un Compte? <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal1">Connectez Vous</button>
                 </label></label> 
                 <label>
-                    <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal2">Connectez Tant Que Recruteur </button>
+                    <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal2">Inscrire Tant Que Recruteur </button>
 
                 </label>        
             </div>
