@@ -33,7 +33,7 @@
                     <div class="job-item p-4 mb-4">
                         <div class="row g-4">
                             <div class="col-sm-12 col-md-8 d-flex align-items-center"  data-bs-toggle="modal" data-bs-target="#Modal<?php echo $i ?>">
-                                <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+                                <img class="flex-shrink-0 img-fluid border rounded" src="../img/<?php echo $_SESSION['photo']; ?>" alt="" style="width: 80px; height: 80px;">
                                 <div class="text-start ps-4">
                                     <h5 class="mb-3 "><?php echo $job->title; ?></h5>
                                     
@@ -60,7 +60,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
 
-                            <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+                            <img class="flex-shrink-0 img-fluid border rounded" src="../img/<?php echo $_SESSION['photo']; ?>" alt="" style="width: 80px; height: 80px;">
                             <div class="text-start ps-4">
                             <h5 class="mb-3 "><?php echo $job->title; ?></h5>
                                         

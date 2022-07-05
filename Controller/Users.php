@@ -16,6 +16,7 @@
             $_SESSION['id'] = $data->id;
             $_SESSION['email'] = $data->email;
             $_SESSION['name'] = $data->name;
+            $_SESSION['photo'] =$data->photo;
             $_SESSION['role'] = $role;
 
         }

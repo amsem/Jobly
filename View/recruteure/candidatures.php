@@ -43,10 +43,10 @@
                                 </style>  
                                 <div class="dropdown-menu" >
                                     <?php $_SESSION['user_email'] = $can->email; ?>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=on review">Mettre En Review</a>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=failed">Failed</a>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=on interview">Programmer une intervue</a>
-                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=hired">Hired</a> 
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=en traitement">Mettre En Review</a>
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=refuser">refuser</a>
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=en entrevue">Programmer une interview</a>
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=embaucher">embaucher</a> 
                                     <a class="dropdown-item" href="">Messager</a> 
                                     <a class="dropdown-item" href="">Voir Le Profile</a> 
                                 </div>

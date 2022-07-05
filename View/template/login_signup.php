@@ -30,10 +30,10 @@
                     </div>
                     <div class="field  fieldlogin gap-2  is-grouped">
                         <div class="control">
-                            <button class="btn btn1 btn-secondary" name="login">Login</button>
+                            <button class="btn btn1 btn-secondary" name="login">Connecter</button>
                         </div>
                         <div class="control">
-                            <button class="btn btn1 btn-secondary">Qnnuler</button>
+                            <button class="btn btn1 btn-secondary">Annuler</button>
                         </div>
                     </div>
                     <div>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="field  fieldlogin gap-2  is-grouped">
                         <div class="control">
-                            <button class="btn btn1 btn-secondary" name="login">Login</button>
+                            <button class="btn btn1 btn-secondary" name="login">Connecter</button>
                         </div>
                         <div class="control">
                             <button class="btn btn1 btn-secondary">Annuler</button>

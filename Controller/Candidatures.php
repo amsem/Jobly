@@ -57,17 +57,17 @@
                 'email' => trim($_SESSION['user_email']),
                 'etat' => trim($_GET['etat'])
             ];
-            if($data['etat'] == "on review") {
+            if($data['etat'] == "en traitement") {
                 mailTo($data['email'],"Dossier en traitement","Votre dossier est en cours de traitement");
             }
-            if($data['etat'] == "failed") {
-                mailTo($data['email'],"Dossier en traitement","Votre dossier echoue");
+            if($data['etat'] == "refuser") {
+                mailTo($data['email'],"Dossier en traitement","Votre dossier refuser");
             }
-            if($data['etat'] == "on interview") {
+            if($data['etat'] == "en entrevue") {
                 mailTo($data['email'],"Dossier en traitement","vous avez ete selectionne pour un interview");
             }
-            if($data['etat'] == "hired") {
-                mailTo($data['email'],"Dossier en traitement","Votre avez ete employee");
+            if($data['etat'] == "embaucher") {
+                mailTo($data['email'],"Dossier en traitement","Votre avez ete embaucher");
             }
             if($this->candidatureModel->updateState($data)){
                 header("Location: ../view/recruteure/candidatures.php");

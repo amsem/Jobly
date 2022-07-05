@@ -8,11 +8,10 @@
         }
     
         public function sendMessage($data){
-            $this->db->query('INSERT INTO message (message, email_from, email_to, pseudo) VALUES (:message, :email_from, :email_to, :pseudo)');
+            $this->db->query('INSERT INTO message (message, email_from, email_to) VALUES (:message, :email_from, :email_to)');
             $this->db->bind(':message', $data['message']);
             $this->db->bind(':email_from', $data['email_from']);
             $this->db->bind(':email_to', $data['email_to']);
-            $this->db->bind(':pseudo', $data['pseudo']);
             
             if($this->db->execute()){
                 return true;
@@ -22,7 +21,7 @@
         }
         
         public function getAllMsg($email,$to){
-            $this->db->query('SELECT * FROM message WHERE email_from = :email_from AND email_to = :too OR email_to = :email_to AND email_from = :ffrom ORDER BY id DESC');
+            $this->db->query('SELECT * FROM message WHERE email_from = :email_from AND email_to = :too OR email_to = :email_to AND email_from = :ffrom');
             $this->db->bind(':email_from', $email);
             $this->db->bind(':email_to', $email);
             $this->db->bind(':too', $to);
@@ -65,13 +64,24 @@
                 }
             }
         }
+
+        public function getContacts($email){
+            $this->db->query('SELECT email_to AS responder FROM message WHERE email_from = :email UNION SELECT email_from FROM message WHERE email_to = :email');
+            $this->db->bind(':email', $email);
+            $row = $this->db->resultSet();
+            if($this->db->rowCount() > 0){
+                return $row;
+            }else{
+                return false;
+            }
+            ;
+        }
     }
     $init = new Message;
         if(isset($_GET['message'])){
             $data['message'] = $_GET['message'];
             $data['email_from'] = $_GET['from'];
             $data['email_to'] = $_GET['to'];
-            $data['pseudo'] = 'test';
             $init->sendMessage($data);
          }
 
