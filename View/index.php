@@ -120,7 +120,7 @@
                         <p><i class="fa fa-check text-primary me-3"></i>simplicité d'interface</p>
                         <p><i class="fa fa-check text-primary me-3"></i>facile a utiliser</p>
                         <p><i class="fa fa-check text-primary me-3"></i>messagerie pour faciliter le contact</p>
-                        <a class="btn btn-primary py-3 px-5 mt-3" href="">créer un compte</a>
+                        <button class="btn btn-primary py-3 px-5 mt-3" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal2" >créer un compte</button>
                     </div>
                 </div>
             </div>
