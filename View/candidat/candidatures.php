@@ -15,11 +15,13 @@
         <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
-                    <?php foreach($mesCandidatures as $candidature){ ?>
+                    <?php 
+                    $i = 6;
+                    foreach($mesCandidatures as $candidature){ ?>
                     <div class="job-item p-4 mb-4">
                         <div class="row g-4">
                             <div class="col-sm-12 col-md-8 d-flex align-items-center" >
-                                <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+                                <img class="flex-shrink-0 img-fluid border rounded" src="../img/<?php echo $candidature->photo; ?>" alt="" style="width: 80px; height: 80px;">
                                 <div class="text-start ps-4">
                                     <h5 class="mb-3 "><?php echo $candidature->title ?></h5>
                                     
@@ -35,14 +37,29 @@
                                                 }
                                 </style>  
                                 <div class="dropdown-menu" >
-                                    <a class="dropdown-item" href="">Voir Status</a>
-                                    <a class="dropdown-item" href="">Supprimer</a>
-                                    <a class="dropdown-item" href="">Voir Le Profile</a>
+                                <?php $_SESSION['user_email'] = $_SESSION['email']; ?>
+                                <button class="dropdown-item" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $i ?>" >voir status</button>
+                                    <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=refuser">Annuler</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
+
+                    <div class="modal fade" id="Modal<?php echo $i ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="card cardprofile p-4"> 
+                                    <div class=" image d-flex flex-column justify-content-center align-items-center">
+                                    <span class="name mt-3">Votre candidature est <?php echo $candidature->etat; ?></span> 
+                                    </div> 
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    <?php $i = $i + 1;
+                } ?>
                     <a class="btn btn-primary py-3 px-5" href="">Voir Plus De Candidatures</a>
                 </div>
             </div>

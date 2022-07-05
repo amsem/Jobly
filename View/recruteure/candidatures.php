@@ -1,13 +1,13 @@
 <?php 
     require "../template/header.php"; 
-    //require_once "../../Controller/Candidatures.php";
-    //if(!isset($_SESSION['role'])){
-      //  header("Location: ../index.php");
-      //}else if($_SESSION['role'] != "recruteur"){
-        //header("Location: ../index.php");
-      //}
-      //$candidatureController = new Candidatures;
-      //$mesCandidatures = $candidatureController->getCandidatures($_SESSION['email']);
+    require_once "../../Controller/Candidatures.php";
+    if(!isset($_SESSION['role'])){
+       header("Location: ../index.php");
+      }else if($_SESSION['role'] != "recruteur"){
+        header("Location: ../index.php");
+      }
+      $candidatureController = new Candidatures;
+      $mesCandidatures = $candidatureController->getCandidatures($_SESSION['email']);
     
     ?>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
@@ -22,11 +22,12 @@
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                     <?php
                     $i = 6; 
+                    $j = 100; 
                     foreach($mesCandidatures as $can){ ?>
                     <div class="job-item p-4 mb-4">
                         <div class="row g-4">
                             <div class="col-sm-12 col-md-8 d-flex align-items-center"  data-bs-toggle="modal" data-bs-target="#Modal<?php echo $i ?>">
-                                <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+                                <img class="flex-shrink-0 img-fluid border rounded" src="../img/<?php echo $_SESSION['photo']; ?>" alt="" style="width: 80px; height: 80px;">
                                 <div class="text-start ps-4">
                                     <h5 class="mb-3 "><?php echo $can->nom." ".$can->prenom; ?></h5>
                                     
@@ -47,8 +48,7 @@
                                     <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=refuser">Refuser</a>
                                     <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=en entrevue">Programmer une intervue</a>
                                     <a class="dropdown-item" href="../../Controller/Candidatures.php?etat=embaucher">embaucher</a> 
-                                    <a class="dropdown-item" href="">Messager</a> 
-                                    <label class="form-label"><button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal20">Voir Le Profile</button></label>
+                                    <a class="dropdown-item" href="../message.php?with=<?php echo $can->email; ?>">Messager</a> 
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <div class="col-sm-12 col-md-8 d-flex align-items-center" >
-                                        <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
+                                        <img class="flex-shrink-0 img-fluid border rounded" src="../img/<?php echo $_SESSION['photo']; ?>" alt="" style="width: 80px; height: 80px;">
                                         <div class="text-start ps-4">
                                         <h5 class="mb-3 "><?php echo $can->nom." ".$can->prenom; ?></h5>
                                                     
@@ -68,48 +68,37 @@
                                 </div>
                                 <div class="modal-body">
                                     <h4 class=" ml-4 mb-3"><?php echo $can->title; ?></h4>
-                                    <button class="btn btn-dark mb-3 mt-3">voir profil</button>
+                                    <button class="btn btn-dark mb-3 mt-3" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $j ?>" >voir profil</button>
                                     <a class="btn btn-dark mb-3 mt-3" href="../cv/<?php echo $can->cv ;?> ">voir le CV</a>
                                     <button class="btn btn-dark mb-3 mt-3">Lettre De Motivation</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="modal fade" id="Modal<?php echo $j ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="card cardprofile p-4"> 
+                                    <div class=" image d-flex flex-column justify-content-center align-items-center">
+                                    <button class="btn btn-secondary"> 
+                                        <img src="../img/<?php echo $can->photo; ?>" height="100" width="100" />
+                                    </button> 
+                                    <span class="name mt-3"><?php echo $can->date_de_naissance; ?></span> 
+                                    <span class="name mt-3"><?php echo $can->email; ?></span> 
+                                    </div> 
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     <?php $i = $i + 1;
+                    $j = $j + 1;
                 } ?>
                     <a class="btn btn-primary py-3 px-5" href="">Voir Plus De Candidatures</a>
                 </div>
-        <div class="modal fade" id="Modal20<?php echo $i ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-body">
-                  <div class="card cardprofile p-4"> 
-                    <div class=" image d-flex flex-column justify-content-center align-items-center">
-                      <button class="btn btn-secondary"> 
-                        <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" />
-                      </button> 
-                      <span class="name mt-3">Eleanor Pena</span> 
-                      <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> 
-                        <span><i class="fa fa-twitter"></i></span>
-                        <span><i class="fa fa-facebook-f"></i></span> 
-                        <span><i class="fa fa-instagram"></i></span> 
-                        <span><i class="fa fa-linkedin"></i></span>
-                      </div> 
-                      <div class="skills gap-3 "> 
-                        <h4>Compétences</h4> 
-                        <div>py</div>
-                        <div>js</div>
-                        <div>html</div>
-                        <div>css</div>
-                        <div>latex</div>
-                      </div>
-                    </div> 
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-</div>
             </div>
         </div>
     </div>

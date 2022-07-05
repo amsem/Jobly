@@ -19,7 +19,7 @@
 
         public function addCategory($data){
             $this->db->query('INSERT INTO category (nom) VALUES (:nom)');
-            $this->db->bind(':name', $data);
+            $this->db->bind(':nom', $data);
             
             if($this->db->execute()){
                 return true;

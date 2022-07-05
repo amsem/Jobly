@@ -24,7 +24,6 @@
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Rechercher" aria-label="Search">
       <div class="navbar-nav">
         <div class="nav-item text-nowrap">
           <a class="nav-link px-3" href="../../Controller/Adminn.php?q=logout">Deconnexion</a>
@@ -94,8 +93,8 @@
                     print ' 
                       <tr>
                         <th scope="row">'.$i.'</th>
-                        <td>'.$candidat->name.'</td>
-                        <td> '.$candidat->family_name.' </td>
+                        <td>'.$candidat->nom.'</td>
+                        <td> '.$candidat->prenom.' </td>
                         <td> '.$candidat->email.' </td>
                         <td> '.$candidat->date_de_naissance.' </td>
                         <td> 

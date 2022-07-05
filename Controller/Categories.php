@@ -7,7 +7,7 @@
         }
 
         public function addCategory(){
-            $data = trim($_POST['name']);
+            $data = trim($_POST['categorieOffre']);
             if($this->categoryModel->addCategory($data)){
                 header("Location: ../view/admin/dashboard.php");
             }
@@ -24,6 +24,6 @@
     }
     $init = new Categories;
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if(isset($_POST['ajouter'])) $init->addCategory();
+        if(isset($_POST['cat'])) $init->addCategory();
     }
 ?>

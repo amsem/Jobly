@@ -21,7 +21,6 @@
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Rechercher" aria-label="Search">
       <div class="navbar-nav">
         <div class="nav-item text-nowrap">
           <a class="nav-link px-3" href="../../Controller/Adminn.php?q=logout">Deconnexion</a>
@@ -61,12 +60,15 @@
             </ul>
           </div>
         </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <form action="../../Controller/Categories.php" method="post">
+            <div class="col-12 p-5">
+              <input type="text" class="form-control" name="categorieOffre" placeholder="entrer le nom de categorie">
+              <button class="btn btn2 btn-secondary m-3" type="submit" name="cat">ajouter</button>
+            </div>
+          </form>
+        </main> 
       </div>
-    </div>
-    <div>
-      <input type="text" name="categorieOffre" placeholder="entrer le nom de categorie">
-      <button class="btn btn2 btn-secondary m-3" type="submit"></button>
-
     </div>
   </body>
 </html>
