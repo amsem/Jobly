@@ -4,15 +4,9 @@
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4">Jobly</h5>
-                        <a class="btn btn-link text-white-50" href="">About Us</a>
-                        <a class="btn btn-link text-white-50" href="">Contactez Nous</a>
-                        <a class="btn btn-link text-white-50" href="">Nos Services</a>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h5 class="text-white mb-4">Autres Liens</h5>
-                        <a class="btn btn-link text-white-50" href="">Connecter</a>
-                        <a class="btn btn-link text-white-50" href="">Contactez Nous</a>
-                        <a class="btn btn-link text-white-50" href="">Publiez un offre</a>
+                        <a class="btn btn-link text-white-50" href="#aboutUs">About Us</a>
+                        <a class="btn btn-link text-white-50" href="#ContactUs">Contactez Nous</a>
+                        <a class="btn btn-link text-white-50" href="#category">Nos Categories</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4">Contacts</h5>

@@ -70,7 +70,7 @@
                         </span>
                     </form>
 
-                    <a href="testimonial.php" class="nav-item nav-link pr-4">About Us</a>
+                    <a href="#aboutUs" class="nav-item nav-link pr-4">About Us</a>
                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] != "admin"){
                         echo '<a class="nav-item nav-link " href="profil.php">
                             dashboard
@@ -93,7 +93,7 @@
                 </a>';
                     } ?>
                 
-                    <a href="contact.php" class="nav-item nav-link ">Nous Contacter</a>
+                    <a href="contact.php" class="nav-item nav-link " id="ContactUs">Nous Contacter</a>
                     <?php
                         if(!isset($_SESSION['role']) || $_SESSION['role'] == "recruteur"){
                             echo '<a href="../View/jobpost.php" class="btn btn-primary rounded-0 px-lg-5 pb-0 mb-0  d-none d-lg-block">Publier Une Offre</a>';

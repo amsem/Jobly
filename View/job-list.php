@@ -32,7 +32,7 @@
                                         <img class="flex-shrink-0 img-fluid border rounded" src="img/com-logo-1.jpg" alt="" style="width: 80px; height: 80px;">
                                         <div class="text-start ps-4">
                                             <h5 class="mb-3"><?= $job->title; ?></h5>
-                                            <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>Tizi-Ouzou</span>
+                                            <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i><?= $job->place; ?></span>
                                             <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i><?= $job->type; ?></span>
                                             <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i><?= $job->salary; ?> DZD</span>
                                         </div>
@@ -42,12 +42,11 @@
                                             <a class="btn btn-light btn-square me-3" href=""><i class="far fa-heart text-primary"></i></a>
                                             <a class="btn btn-primary" href="job-detail.php?id=<?= $job->job_id;?>">Postuler</a>
                                         </div>
-                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Date : 01 Jan, 2045</small>
+                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i><?php echo $job->date; ?></small>
                                     </div>
                                 </div>
                             </div>
                         <?php } ?>
-                            <a class="btn btn-primary py-3 px-5" href="">Trouver Plus D'offres</a>
                         </div>
                     </div>
                 </div>
