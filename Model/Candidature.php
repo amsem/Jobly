@@ -24,7 +24,7 @@
         }
 
         public function getCandidatures($email){
-            $this->db->query('SELECT u.nom,u.prenom,u.email,u.cv,u.date_de_naissance,u.photo,jobs.title FROM candidature c INNER JOIN candidat u ON c.user_email= u.email INNER JOIN jobs ON jobs.job_id = c.job_id WHERE c.recruteur_email = :rec');
+            $this->db->query('SELECT u.nom,u.prenom,u.email,u.cv,u.date_de_naissance,u.photo,jobs.title,coverletter FROM candidature c INNER JOIN candidat u ON c.user_email= u.email INNER JOIN jobs ON jobs.job_id = c.job_id WHERE c.recruteur_email = :rec');
             $this->db->bind(':rec', $email);
         
             $row = $this->db->resultSet();

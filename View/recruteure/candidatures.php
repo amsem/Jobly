@@ -70,7 +70,6 @@
                                     <h4 class=" ml-4 mb-3"><?php echo $can->title; ?></h4>
                                     <button class="btn btn-dark mb-3 mt-3" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $j ?>" >voir profil</button>
                                     <a class="btn btn-dark mb-3 mt-3" href="../cv/<?php echo $can->cv ;?> ">voir le CV</a>
-                                    <button class="btn btn-dark mb-3 mt-3">Lettre De Motivation</button>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +85,8 @@
                                         <img src="../img/<?php echo $can->photo; ?>" height="100" width="100" />
                                     </button> 
                                     <span class="name mt-3"><?php echo $can->date_de_naissance; ?></span> 
-                                    <span class="name mt-3"><?php echo $can->email; ?></span> 
+                                    <span class="name mt-3"><?php echo $can->email; ?></span>
+                                    <span class="name mt-3"> Lettre De Motivation : <?php echo $can->coverletter; ?></span>
                                     </div> 
                                 </div>
                                 </div>

@@ -48,14 +48,14 @@
                         print'<div class="outgoing_msg">
                                 <div class="sent_msg">
                                     <p>'.$row->message.'</p>
-                                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
-                                </div>';
+                                    </div>
+                                    </div>';
                     }else{
                         print'<div class="received_msg">
                                 <div class="received_withd_msg">
                                     <p>'.$row->message.'</p>
-                                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
-                                </div>';
+                                    </div>
+                                    </div>';
                     }
                     $this->db->query('UPDATE message SET seen = "1" WHERE id = :id');
                     $this->db->bind(':id', $row->id);
